@@ -5,12 +5,15 @@ from pathlib import Path
 import re
 import subprocess
 import tempfile
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 PARTS = {
     1: "theory-01-linear-algebra",
     2: "theory-02-metric-curvature",
     3: "theory-03-constant-curvature-symmetry",
+    4: "theory-04-pseudo-euclidean-relativity",
+    5: "theory-05-sphere-assignment",
 }
 
 
@@ -39,6 +42,9 @@ def main() -> None:
             continue
         title, text = text.split("\n", 1)
         subtitle = title.removeprefix("# ")
+        # Keep closing summaries and their tables together on a fresh page.
+        text = re.sub(r"(?m)^(## \d+\. Сводка[^\n]*)$",
+                      lambda m: "\\newpage\n\n" + m.group(1), text)
         with tempfile.TemporaryDirectory(prefix=f"geometry-part-{number}-") as temp:
             source = Path(temp) / "part.md"
             source.write_text(text, encoding="utf-8")
@@ -51,6 +57,9 @@ def main() -> None:
                 "--output", str(ROOT / f"{stem}.pdf"),
             ], check=True, cwd=ROOT)
         print(f"Built: {ROOT / (stem + '.pdf')}")
+
+    if args.part is None and not args.obsidian:
+        subprocess.run([sys.executable, str(ROOT / "scripts/build-assignment.py")], check=True)
 
 
 if __name__ == "__main__":
