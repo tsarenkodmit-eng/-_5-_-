@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def to_standard_markdown(text: str) -> str:
+    text = re.sub(r"\$`([^`\n]+)`\$", r"$\1$", text)
     return re.sub(r"^```math\n(.*?)\n```$", r"$$\n\1\n$$", text,
                   flags=re.MULTILINE | re.DOTALL)
 
