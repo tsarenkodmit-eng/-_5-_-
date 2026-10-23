@@ -276,781 +276,371 @@ U^\mu=\frac{dx^\mu}{d\tau}=\gamma_u(c,u_x,u_y,u_z),
 
 ### 3.1. Поверхность, локальные координаты и касательное пространство
 
-Гладкую поверхность в $\mathbb R^3$ в окрестности каждой её точки можно описать параметризацией
+Гладкая поверхность $M\subset\mathbb R^3$ локально описывается взаимно однозначной регулярной параметризацией $r:U\subset\mathbb R^2\to M$, где $U$ открыто, $r$ гладко, а векторы $r_{x^1},r_{x^2}$ линейно независимы. Пара $(x^1,x^2)$ задаёт координаты на этом участке. Касательная плоскость состоит из скоростей гладких кривых на поверхности и имеет вид
 
 ```math
-r:U\subset\mathbb R^2\longrightarrow M\subset\mathbb R^3,
-\qquad (x^1,x^2)\longmapsto r(x^1,x^2),
+T_pM=\operatorname{span}\{r_{x^1},r_{x^2}\},\qquad p=r(x^1,x^2).
 ```
 
-где $U$ открыто, отображение $r$ гладкое и взаимно однозначное на рассматриваемый участок, а векторы $r_{x^1}$ и $r_{x^2}$ линейно независимы. Обратное отображение задаёт локальные координаты точки поверхности. Для покрытия всей поверхности могут понадобиться несколько таких участков.
-
-Касательный вектор в точке $p$ — скорость $\dot\gamma(0)$ гладкой кривой на поверхности, проходящей через $p=\gamma(0)$. Все касательные векторы образуют двумерное линейное пространство $T_pM$. Если $p=r(x^1,x^2)$, то
-
-```math
-T_pM=\operatorname{span}\{r_{x^1},r_{x^2}\}.
-```
-
-Координатные векторы $\partial_i=\partial/\partial x^i$ при таком описании отождествляются с $r_{x^i}$. Векторное поле — гладкий выбор касательного вектора в каждой точке; в координатах оно имеет вид $Y=Y^i\partial_i$. Для поля $X=X^i\partial_i$ и гладкой функции $f$ запись $X(f)=X^i\partial_i f$ означает производную функции в направлении $X$. Здесь и далее по повторяющемуся верхнему и нижнему индексу подразумевается суммирование; на поверхности индексы принимают значения $1,2$.
+Координатные поля $\partial_i=\partial/\partial x^i$ отождествляются с $r_{x^i}$. Поле $X=X^i\partial_i$ действует на функцию по правилу $X(f)=X^i\partial_i f$. На поверхности индексы принимают значения $1,2$; повторение верхнего и нижнего индекса означает суммирование.
 
 ### 3.2. Риманова метрика
 
-Риманова метрика $g$ задаёт на каждом $T_pM$ положительно определённую симметричную билинейную форму $g_p$, гладко зависящую от точки. Для поверхности в евклидовом пространстве обычная индуцированная метрика определяется ограничением евклидова скалярного произведения:
+Риманова метрика — гладко зависящая от точки положительно определённая симметричная билинейная форма на $T_pM$. Для поверхности в евклидовом пространстве индуцированная метрика задаётся формулами [2, лекция 11]
 
 ```math
-g_p(v,w)=\langle v,w\rangle,
-\qquad v,w\in T_pM.
-```
-
-Обозначим через $dx^i$ координатные линейные формы, заданные равенствами $dx^i(\partial_j)=\delta^i{}_j$, где $\delta^i{}_j$ равно $1$ при $i=j$ и $0$ иначе. Для $X=X^i\partial_i$, $Y=Y^j\partial_j$ тензорное произведение форм означает $(dx^i\otimes dx^j)(X,Y)=X^iY^j$. Тогда в локальных координатах
-
-```math
-g_{ij}=g(\partial_i,\partial_j)
-=\langle r_{x^i},r_{x^j}\rangle,
-\qquad
+g_p(v,w)=\langle v,w\rangle,\qquad
+g_{ij}=\langle r_{x^i},r_{x^j}\rangle,\qquad
 g=g_{ij}\,dx^i\otimes dx^j.
 ```
 
-Сам тензор $g$, его координатная матрица $G=(g_{ij})$ и запись квадрата элемента длины связаны равенством
-
-```math
-ds^2=g_{ij}\,dx^i dx^j.
-```
-
-Последняя запись обозначает квадратичную форму метрики. В частности, для кривой $x=x(t)$ квадрат скорости равен $g_{ij}\dot x^i\dot x^j$. Через $g^{ij}$ обозначаются элементы обратной матрицы:
-
-```math
-g^{ik}g_{kj}=\delta^i{}_j,
-```
-
-Метрика является тензором типа $(0,2)$: она принимает два векторных аргумента и имеет два нижних координатных индекса. Книжная основа римановой метрики и её координатной записи — [2, лекция 11].
+Здесь $dx^i(\partial_j)=\delta^i{}_j$, а $\delta^i{}_j$ — символ Кронекера. Квадрат элемента длины записывается как $ds^2=g_{ij}\,dx^i dx^j$. Через $g^{ij}$ обозначаются элементы обратной матрицы $G^{-1}$, так что $g^{ik}g_{kj}=\delta^i{}_j$. Метрика имеет тип $(0,2)$.
 
 ### 3.3. Связность Леви-Чивиты
 
-Ковариантная производная $\nabla_XY$ позволяет дифференцировать касательное векторное поле $Y$ в направлении поля $X$ и получать снова касательное поле. Она линейна по $X$ над гладкими функциями, линейна по $Y$ над $\mathbb R$ и удовлетворяет правилу произведения по $Y$:
+Связность задаёт ковариантную производную касательного поля $Y$ по направлению $X$, линейную по $X$ над гладкими функциями и по $Y$ над $\mathbb R$, с правилом $\nabla_X(fY)=X(f)Y+f\nabla_XY$. Связность Леви-Чивиты — единственная связность без кручения, согласованная с метрикой [2, лекция 11]:
 
 ```math
-\nabla_{fX+hZ}Y=f\nabla_XY+h\nabla_ZY,
-\qquad
-\nabla_X(fY)=X(f)Y+f\nabla_XY.
+\nabla_XY-\nabla_YX=[X,Y],\qquad
+X(g(Y,Z))=g(\nabla_XY,Z)+g(Y,\nabla_XZ).
 ```
 
-**Связность Леви-Чивиты** определяется двумя свойствами:
-
-```math
-\begin{aligned}
-\nabla_XY-\nabla_YX&=[X,Y],\\
-X\bigl(g(Y,Z)\bigr)&=g(\nabla_XY,Z)+g(Y,\nabla_XZ).
-\end{aligned}
-```
-
-Первое означает отсутствие кручения, второе — согласованность с метрикой, обозначаемую $\nabla g=0$. Здесь $[X,Y]$ — коммутатор полей: $[X,Y](f)=X(Y(f))-Y(X(f))$.
-
-Стандартная теорема утверждает: для каждой гладкой римановой метрики существует единственная связность без кручения, согласованная с метрикой [2, лекция 11]. В координатном базисе $[\partial_i,\partial_j]=0$, поэтому
+Второе свойство обозначается $\nabla g=0$. Коммутатор полей определяется действием $[X,Y](f)=X(Y(f))-Y(X(f))$. В координатном базисе $[\partial_i,\partial_j]=0$, и
 
 ```math
 \nabla_{\partial_i}\partial_j=\Gamma^k{}_{ij}\partial_k,
 \qquad \Gamma^k{}_{ij}=\Gamma^k{}_{ji}.
 ```
 
-Выведем формулу для этих коэффициентов из согласованности с метрикой [2, лекция 11, с.174–175]. Подставляя координатные поля в равенство для производной скалярного произведения, получаем три равенства:
+Из согласованности с метрикой и этой симметрии получаем формулу [2, лекция 11, с.174–175]
 
 ```math
-\begin{aligned}
-\partial_i g_{j\ell}
-&=\Gamma^m{}_{ij}g_{m\ell}+\Gamma^m{}_{i\ell}g_{jm},\\
-\partial_j g_{i\ell}
-&=\Gamma^m{}_{ji}g_{m\ell}+\Gamma^m{}_{j\ell}g_{im},\\
-\partial_\ell g_{ij}
-&=\Gamma^m{}_{\ell i}g_{mj}+\Gamma^m{}_{\ell j}g_{im}.
-\end{aligned}
-```
-
-Сложим первые два и вычтем третье. Благодаря симметриям $\Gamma^m{}_{ij}=\Gamma^m{}_{ji}$ и $g_{ij}=g_{ji}$ члены с $\Gamma^m{}_{i\ell}$ и $\Gamma^m{}_{j\ell}$ сокращаются, а два оставшихся совпадают:
-
-```math
-\partial_i g_{j\ell}+\partial_j g_{i\ell}
--\partial_\ell g_{ij}=2g_{m\ell}\Gamma^m{}_{ij}.
-```
-
-Умножим равенство на $g^{k\ell}$ и просуммируем по $\ell$. Поскольку $g^{k\ell}g_{m\ell}=\delta^k{}_m$, правая часть равна $2\Gamma^k{}_{ij}$. Деление на $2$ даёт искомую формулу:
-
-```math
-\boxed{\displaystyle
 \Gamma^k{}_{ij}=\frac12g^{k\ell}
-\left(\partial_i g_{j\ell}+\partial_jg_{i\ell}
--\partial_\ell g_{ij}\right).}
+\left(\partial_i g_{j\ell}+\partial_jg_{i\ell}-\partial_\ell g_{ij}\right).
 ```
 
-В этой формуле требуется обратимость матрицы метрики, а положительная определённость для самих алгебраических действий не нужна. Поэтому формула сохраняется для гладкой невырожденной метрики любой сигнатуры, в частности для метрики Минковского.
+Правило произведения даёт $\nabla_{\partial_i}Y=(\partial_iY^k+\Gamma^k{}_{ij}Y^j)\partial_k$. В отличие от метрики, символы $\Gamma^k{}_{ij}$ не являются компонентами тензора.
 
-Здесь $\partial_i=\partial/\partial x^i$, а сумма берётся по $\ell$. Для поля $Y=Y^j\partial_j$ правило произведения даёт
+### 3.4. Тензор кривизны, Риччи и кривизны поверхности
+
+Принимаем определение и порядок индексов
 
 ```math
-\nabla_{\partial_i}Y
-=\left(\partial_iY^k+\Gamma^k{}_{ij}Y^j\right)\partial_k.
+R(X,Y)Z=\nabla_X\nabla_YZ-\nabla_Y\nabla_XZ-\nabla_{[X,Y]}Z,
+\qquad R(\partial_i,\partial_j)\partial_k=R^l{}_{kij}\partial_l.
 ```
 
-Символы Кристоффеля $\Gamma^k{}_{ij}$ зависят от координат и сами не являются компонентами тензора: при замене координат их преобразование содержит вторые производные функции перехода.
-
-### 3.4. Тензор кривизны, Риччи и две скалярные кривизны поверхности
-
-Фиксируем определение
+Тензор $R$ имеет тип $(1,3)$ и кососимметричен по $i,j$. В координатах
 
 ```math
-\boxed{R(X,Y)Z
-=\nabla_X\nabla_YZ-\nabla_Y\nabla_XZ-\nabla_{[X,Y]}Z.}
-```
-
-Это тензор типа $(1,3)$: он принимает три касательных вектора и возвращает один. Порядок индексов задаём равенством
-
-```math
-R(\partial_i,\partial_j)\partial_k
-=R^l{}_{kij}\partial_l.
-```
-
-В частности, $R(X,Y)=-R(Y,X)$, откуда $R^l{}_{kij}=-R^l{}_{kji}$. В координатах коммутатор равен нулю, а
-
-```math
-\begin{aligned}
 \nabla_{\partial_i}\nabla_{\partial_j}\partial_k
-&=\nabla_{\partial_i}(\Gamma^m{}_{jk}\partial_m)\\
-&=\left(\partial_i\Gamma^l{}_{jk}
+=\left(\partial_i\Gamma^l{}_{jk}
 +\Gamma^m{}_{jk}\Gamma^l{}_{im}\right)\partial_l.
-\end{aligned}
 ```
 
-Вычитая выражение с переставленными $i,j$, получаем согласованную координатную формулу:
+Вычитая выражение с переставленными $i,j$, получаем
 
 ```math
-\boxed{\displaystyle
-R^l{}_{kij}
-=\partial_i\Gamma^l{}_{jk}-\partial_j\Gamma^l{}_{ik}
-+\Gamma^m{}_{jk}\Gamma^l{}_{im}
--\Gamma^m{}_{ik}\Gamma^l{}_{jm}.}
+R^l{}_{kij}=\partial_i\Gamma^l{}_{jk}-\partial_j\Gamma^l{}_{ik}
++\Gamma^m{}_{jk}\Gamma^l{}_{im}-\Gamma^m{}_{ik}\Gamma^l{}_{jm}.
 ```
 
-**Тензор Риччи** получается свёрткой верхнего индекса с индексом $i$:
+Тензор Риччи и скалярная кривизна определяются свёртками [2, лекции 2, 15–17]
 
 ```math
-\operatorname{Ric}_{kj}=\sum_iR^i{}_{kij}.
-```
-
-Это тензор типа $(0,2)$. **Скалярная кривизна** — его свёртка с обратной метрикой:
-
-```math
+\operatorname{Ric}_{kj}=\sum_iR^i{}_{kij},\qquad
 \operatorname{Scal}=\sum_{k,j}g^{kj}\operatorname{Ric}_{kj}.
 ```
 
-Обычный след координатной матрицы $(\operatorname{Ric}_{kj})$ в произвольном базисе эту свёртку не заменяет.
-
-Для линейно независимых векторов $X,Y\in T_pM$ **секционная кривизна** плоскости, которую они натягивают, равна
+Первая свёртка даёт тензор типа $(0,2)$, вторая — скаляр; обычный след матрицы Риччи вторую свёртку не заменяет. Секционная кривизна плоскости, натянутой на независимые $X,Y\in T_pM$, равна
 
 ```math
-K(X,Y)=
-\frac{g(R(X,Y)Y,X)}
-{g(X,X)g(Y,Y)-g(X,Y)^2}.
+K(X,Y)=\frac{g(R(X,Y)Y,X)}{g(X,X)g(Y,Y)-g(X,Y)^2}.
 ```
 
-Знаменатель положителен: это квадрат площади параллелограмма, построенного на $X,Y$. Значение дроби не зависит от выбора базиса той же плоскости. На поверхности $T_pM$ уже двумерно, поэтому в каждой точке получается одно значение $K(p)$ — **гауссова кривизна**. Обе величины $K$ и $\operatorname{Scal}$ являются скалярами, но их определения различны. Соотношение между ними для данной сферы получим прямым вычислением. Кривизна и её свёртки рассматриваются в [2, лекции 2, 15–17]; дальнейшие вычисления проводятся в явно выбранных здесь обозначениях.
+Значение не зависит от выбора базиса плоскости, а знаменатель положителен. На двумерной поверхности это гауссова кривизна $K(p)$. Она отличается по определению от $\operatorname{Scal}$; их связь для сферы получим вычислением.
 
-Теперь можно уточнить геометрическое свойство пространства Минковского из главы 2. В инерциальных аффинных координатах его матрица метрики постоянна. Все её производные равны нулю, поэтому по формуле Леви-Чивиты равны нулю коэффициенты связности, а по формуле кривизны — компоненты $R$. Пространство с нулевым тензором кривизны называется плоским. В криволинейных координатах коэффициенты связности могут стать ненулевыми, но тензор $R$ останется нулевым. Таким образом, неопределённая сигнатура и кривизна — разные свойства метрики.
+Отметим связь с главой 2: в инерциальных координатах метрика Минковского постоянна, поэтому $\Gamma=0$ и $R=0$. Следовательно, неопределённая сигнатура сама по себе не означает кривизну. Формулы связности и $R$ применимы и к невырожденной метрике иной сигнатуры.
 
 ### 3.5. Локальная геодезическая симметрия
 
-Геодезическая — кривая, скорость которой параллельна самой себе:
+Геодезическая удовлетворяет условию $\nabla_{\dot\gamma}\dot\gamma=0$. Для достаточно малого $v\in T_pM$ положим $\exp_p(v)=\gamma_v(1)$, где $\gamma_v(0)=p$, $\dot\gamma_v(0)=v$. На малом шаре $B\subset T_pM$ с центром $0$ экспонента является диффеоморфизмом на нормальную окрестность точки $p$ [2, лекция 1, с.19–20]. Локальная геодезическая симметрия определяется равенством
 
 ```math
-\nabla_{\dot\gamma}\dot\gamma=0.
+s_p(\exp_pv)=\exp_p(-v),\qquad v\in B.
 ```
 
-В координатах $\dot\gamma=\dot x^i\partial_i$. По правилу произведения и ранее полученной формуле ковариантной производной условие геодезической принимает вид системы
+Она фиксирует $p$, меняет направление геодезических через $p$ и удовлетворяет $(ds_p)_p=-\operatorname{id}_{T_pM}$. Риманово пространство локально симметрично, если для каждой точки $p$ такая симметрия на достаточно малой окрестности является изометрией.
+
+Используем достаточный критерий для связности Леви-Чивиты:
 
 ```math
-\ddot x^k+\Gamma^k{}_{ij}(x)\dot x^i\dot x^j=0.
+\nabla R=0\quad\Longrightarrow\quad
+s_p\text{ являются локальными изометриями}.
 ```
 
-Для начальных данных $\gamma(0)=p$, $\dot\gamma(0)=v$ обозначим её через $\gamma_v$. Теория гладких обыкновенных дифференциальных уравнений даёт локальные существование, единственность и гладкую зависимость решения от начальных данных. Экспоненциальное отображение определяется равенством $\exp_p(v)=\gamma_v(1)$ при достаточно малом $v$. Перепараметризация $s\mapsto\gamma_v(ts)$ сохраняет уравнение геодезической и задаёт начальную скорость $tv$. Поэтому по единственности в общей области определения $\gamma_{tv}(s)=\gamma_v(ts)$, откуда для достаточно малого $t$ получаем $\exp_p(tv)=\gamma_v(t)$ и
-
-```math
-(d\exp_p)_0v
-=\left.\frac{d}{dt}\exp_p(tv)\right|_{t=0}
-=\dot\gamma_v(0)=v.
-```
-
-Следовательно, $(d\exp_p)_0=\operatorname{id}$. По теореме об обратной функции на некоторой окрестности нуля в $T_pM$ отображение $\exp_p$ задаёт гладкие взаимно однозначные координаты окрестности точки $p$, называемой нормальной [2, лекция 1, с.19–20].
-
-Выберем малый шар $B\subset T_pM$ с центром $0$, на котором $\exp_p$ является диффеоморфизмом, то есть гладким отображением с гладким обратным, и положим $U=\exp_p(B)$. **Локальная геодезическая симметрия в точке $p$** имеет вид
-
-```math
-s_p(\exp_p v)=\exp_p(-v),\qquad v\in B.
-```
-
-Она обращает направление геодезической, проходящей через $p$. Из определения следуют фиксация $p$ и равенство $s_p^2=\operatorname{id}$. Применяя правило дифференцирования композиции к $s_p\circ\exp_p=\exp_p\circ(-\operatorname{id})$ в нуле и используя $(d\exp_p)_0=\operatorname{id}$, получаем также действие дифференциала:
-
-```math
-s_p(p)=p,\qquad s_p^2=\operatorname{id},
-\qquad (ds_p)_p=-\operatorname{id}_{T_pM}.
-```
-
-Риманово пространство **локально симметрично**, если для каждой точки можно выбрать такую окрестность, что $s_p$ сохраняет метрику:
-
-```math
-g_{s_p(q)}\bigl((ds_p)_q u,(ds_p)_q w\bigr)=g_q(u,w).
-```
-
-Стандартный критерий для связности Леви-Чивиты:
-
-```math
-\boxed{\text{Локальная симметричность}\quad\Longleftrightarrow\quad\nabla R=0.}
-```
-
-Критерий связан с теорией локально симметричных связностей [2, лекция 4, определение 1 и предложение 3]. Нужное здесь риманово следствие сформулировано отдельно в [2, лекция 23, задача 1, с.389]: условие $\nabla R=0$ для связности Леви-Чивиты влечёт, что геодезические симметрии являются локальными изометриями. Применим именно эту достаточность. В общем случае постоянство скалярной кривизны не заменяет условие на полный тензор; в решении сферы проверим именно $\nabla R=0$.
+Книжная опора — теория локально симметричных связностей [2, лекция 4, определение 1 и предложение 3]; нужное риманово следствие приведено в [2, лекция 23, задача 1, с.389]. Поэтому далее требуется ковариантная постоянность полного $R$, а не только постоянство $K$ или $\operatorname{Scal}$.
 
 ## 4. Сфера как локально симметрическое пространство
 
 ### 4.1. Условие и выбор радиуса
 
-В задании требуется доказать, что сфера $S^2$ с обычной метрикой локально симметрична, и вычислить её скалярную и гауссову кривизны.
-
-Стандартно $S^2$ обозначает единичную сферу в евклидовом $\mathbb R^3$, а обычная метрика — метрику, индуцированную евклидовым скалярным произведением. Сначала выполним вычисление для постоянного радиуса $a>0$, затем положим $a=1$. Параметр $a$ вводится для общего расчёта и проверки зависимости от масштаба.
+Требуется доказать локальную симметричность сферы $S^2$ с обычной метрикой и вычислить её гауссову и скалярную кривизны. Обычная метрика индуцирована евклидовым скалярным произведением в $\mathbb R^3$. Сначала рассмотрим постоянный радиус $a>0$, затем перейдём к стандартной единичной сфере $a=1$.
 
 ### 4.2. Сфера, касательная плоскость и индуцированная метрика
 
-Рассмотрим
+Сфера $S_a^2=\{x\in\mathbb R^3:\langle x,x\rangle=a^2\}$ — регулярная поверхность уровня $F(x)=\langle x,x\rangle-a^2$: при $p\in S_a^2$ имеем $\operatorname{grad}F(p)=2p\ne0$. Поэтому
 
 ```math
-S_a^2=\{x\in\mathbb R^3:\langle x,x\rangle=a^2\}.
+T_pS_a^2=\ker dF_p=\{v:\langle p,v\rangle=0\}=p^\perp,
+\qquad g_p(v,w)=\langle v,w\rangle.
 ```
 
-Для функции $F(x)=\langle x,x\rangle-a^2$ имеем
-
-```math
-dF_p(v)=2\langle p,v\rangle,
-\qquad \operatorname{grad}F(p)=2p\ne0
-\quad\text{при }p\in S_a^2.
-```
-
-По теореме о неявной функции это гладкая поверхность. Касательная плоскость к регулярной поверхности уровня является ядром $dF_p$, поэтому
-
-```math
-T_pS_a^2=\{v\in\mathbb R^3:\langle p,v\rangle=0\}=p^\perp.
-```
-
-Условие можно получить и непосредственно: для кривой $\gamma(t)$ на сфере с $\gamma(0)=p$ дифференцирование равенства $\langle\gamma(t),\gamma(t)\rangle=a^2$ даёт $\langle p,\dot\gamma(0)\rangle=0$.
-
-Положим
-
-```math
-g_p(v,w)=\langle v,w\rangle,
-\qquad v,w\in p^\perp.
-```
-
-Тогда $g_p(v,v)=|v|^2>0$ для любого ненулевого касательного вектора. Следовательно, это риманова метрика. В данной задаче используется именно евклидово произведение окружающего $\mathbb R^3$.
+На касательной плоскости $g_p(v,v)=|v|^2>0$ при $v\ne0$, так что метрика риманова во всех точках сферы.
 
 ### 4.3. Локальная сферическая параметризация
 
-Выберем координаты $x^1=\theta$, $x^2=\varphi$ и параметризацию
+Введём $x^1=\theta$, $x^2=\varphi$:
 
 ```math
-r(\theta,\varphi)
-=a(\sin\theta\cos\varphi,\sin\theta\sin\varphi,\cos\theta),
-\qquad
-0<\theta<\pi,\quad \alpha<\varphi<\alpha+2\pi,
+r(\theta,\varphi)=a(\sin\theta\cos\varphi,\sin\theta\sin\varphi,\cos\theta),
+\qquad 0<\theta<\pi,\quad \alpha<\varphi<\alpha+2\pi.
 ```
 
-где $\alpha$ — фиксированный угол разреза. На таком открытом прямоугольнике параметризация взаимно однозначна. Она описывает сферу без двух полюсов и одного меридианного разреза. Для точек разреза выбирается другой интервал долгот. Значения $\theta=0,\pi$ в эту карту не входят.
-
-Производные параметризации:
+Фиксированный угол $\alpha$ задаёт меридианный разрез. На этом открытом прямоугольнике параметризация взаимно однозначна; полюса и разрез в карту не входят. Касательные координатные векторы равны
 
 ```math
 \begin{aligned}
-r_\theta
-&=a(\cos\theta\cos\varphi,
-\cos\theta\sin\varphi,-\sin\theta),\\
-r_\varphi
-&=a(-\sin\theta\sin\varphi,
-\sin\theta\cos\varphi,0).
+r_\theta&=a(\cos\theta\cos\varphi,\cos\theta\sin\varphi,-\sin\theta),\\
+r_\varphi&=a(-\sin\theta\sin\varphi,\sin\theta\cos\varphi,0).
 \end{aligned}
 ```
 
-Ниже скалярные произведения покажут, что оба вектора ненулевые и ортогональны при $0<\theta<\pi$. Значит, они линейно независимы и образуют базис касательной плоскости рассматриваемой точки.
+### 4.4. Коэффициенты метрики и обратная матрица
 
-### 4.4. Коэффициенты метрики, определитель и обратная матрица
-
-Вычислим все попарные скалярные произведения:
+Вычислим их скалярные произведения:
 
 ```math
 \begin{aligned}
 g_{\theta\theta}
-&=\langle r_\theta,r_\theta\rangle\\
-&=a^2\left(\cos^2\theta\cos^2\varphi
-+\cos^2\theta\sin^2\varphi+\sin^2\theta\right)\\
-&=a^2\left(\cos^2\theta+\sin^2\theta\right)=a^2,\\[2mm]
+&=a^2\bigl(\cos^2\theta(\cos^2\varphi+\sin^2\varphi)+\sin^2\theta\bigr)=a^2,\\
 g_{\theta\varphi}
-&=\langle r_\theta,r_\varphi\rangle\\
-&=a^2\left(-\cos\theta\sin\theta\cos\varphi\sin\varphi
-+\cos\theta\sin\theta\sin\varphi\cos\varphi\right)=0,\\[2mm]
+&=a^2\cos\theta\sin\theta(-\cos\varphi\sin\varphi+\sin\varphi\cos\varphi)=0,\\
 g_{\varphi\varphi}
-&=\langle r_\varphi,r_\varphi\rangle\\
-&=a^2\sin^2\theta\left(\sin^2\varphi+\cos^2\varphi\right)
-=a^2\sin^2\theta.
+&=a^2\sin^2\theta(\sin^2\varphi+\cos^2\varphi)=a^2\sin^2\theta.
 \end{aligned}
-```
-
-По симметрии $g_{\varphi\theta}=g_{\theta\varphi}=0$. Следовательно,
-
-```math
-G=(g_{ij})=
-\begin{pmatrix}
-a^2&0\\
-0&a^2\sin^2\theta
-\end{pmatrix},
-\qquad
-\boxed{ds^2=a^2\bigl(d\theta^2+\sin^2\theta\,d\varphi^2\bigr).}
-```
-
-Определитель и обратная матрица равны
-
-```math
-\det G=a^4\sin^2\theta>0,
-\qquad
-G^{-1}=(g^{ij})=
-\begin{pmatrix}
-a^{-2}&0\\
-0&(a^2\sin^2\theta)^{-1}
-\end{pmatrix}.
-```
-
-Проверка умножением:
-
-```math
-G^{-1}G=
-\begin{pmatrix}
-a^{-2}a^2&0\\
-0&(a^2\sin^2\theta)^{-1}a^2\sin^2\theta
-\end{pmatrix}
-=\begin{pmatrix}1&0\\0&1\end{pmatrix}.
-```
-
-Все деления допустимы на выбранной области: $a>0$ и $\sin\theta>0$.
-
-### 4.5. Символы Кристоффеля
-
-Коэффициент $g_{\theta\theta}=a^2$ постоянен, смешанные коэффициенты тождественно нулевые, а $g_{\varphi\varphi}=a^2\sin^2\theta$ зависит только от $\theta$. Поэтому среди всех $\partial_i g_{jk}$ единственная производная, не равная тождественно нулю, —
-
-```math
-\partial_\theta g_{\varphi\varphi}
-=2a^2\sin\theta\cos\theta.
-```
-
-В формуле для $\Gamma^\theta{}_{\varphi\varphi}$ диагональность обратной метрики оставляет только слагаемое $\ell=\theta$:
-
-```math
-\begin{aligned}
-\Gamma^\theta{}_{\varphi\varphi}
-&=\frac12g^{\theta\theta}
-\left(\partial_\varphi g_{\varphi\theta}
-+\partial_\varphi g_{\varphi\theta}
--\partial_\theta g_{\varphi\varphi}\right)\\
-&=\frac12\frac1{a^2}
-\left(0+0-2a^2\sin\theta\cos\theta\right)\\
-&=-\sin\theta\cos\theta.
-\end{aligned}
-```
-
-В формуле для $\Gamma^\varphi{}_{\theta\varphi}$ остаётся только $\ell=\varphi$:
-
-```math
-\begin{aligned}
-\Gamma^\varphi{}_{\theta\varphi}
-&=\frac12g^{\varphi\varphi}
-\left(\partial_\theta g_{\varphi\varphi}
-+\partial_\varphi g_{\theta\varphi}
--\partial_\varphi g_{\theta\varphi}\right)\\
-&=\frac12\frac1{a^2\sin^2\theta}
-\left(2a^2\sin\theta\cos\theta+0-0\right)\\
-&=\frac{\cos\theta}{\sin\theta}=\cot\theta.
-\end{aligned}
-```
-
-Отсутствие кручения даёт $\Gamma^\varphi{}_{\varphi\theta}=\Gamma^\varphi{}_{\theta\varphi}$. Остальные коэффициенты зануляются по той же общей формуле:
-
-```math
-\begin{aligned}
-\Gamma^\theta{}_{\theta\theta}
-&=\frac1{2a^2}\partial_\theta g_{\theta\theta}=0,\\
-\Gamma^\theta{}_{\theta\varphi}
-=\Gamma^\theta{}_{\varphi\theta}
-&=\frac1{2a^2}\partial_\varphi g_{\theta\theta}=0,\\
-\Gamma^\varphi{}_{\theta\theta}
-&=\frac1{2a^2\sin^2\theta}
-\left(2\partial_\theta g_{\theta\varphi}
--\partial_\varphi g_{\theta\theta}\right)=0,\\
-\Gamma^\varphi{}_{\varphi\varphi}
-&=\frac1{2a^2\sin^2\theta}\partial_\varphi g_{\varphi\varphi}=0.
-\end{aligned}
-```
-
-Таким образом, полный список коэффициентов, не равных тождественно нулю:
-
-```math
-\boxed{\Gamma^\theta{}_{\varphi\varphi}
-=-\sin\theta\cos\theta,\qquad
-\Gamma^\varphi{}_{\theta\varphi}
-=\Gamma^\varphi{}_{\varphi\theta}=\cot\theta.}
-```
-
-Радиус сократился в произведении $g^{k\ell}\partial_i g_{j\ell}$: обратная метрика содержит $a^{-2}$, производная метрики — $a^2$. Поэтому постоянное изменение радиуса в данной угловой записи не меняет символы связности.
-
-### 4.6. Компоненты тензора кривизны
-
-Применяем формулу с ранее заданным порядком индексов:
-
-```math
-R^l{}_{kij}
-=\partial_i\Gamma^l{}_{jk}-\partial_j\Gamma^l{}_{ik}
-+\sum_{m\in\{\theta,\varphi\}}
-\left(\Gamma^m{}_{jk}\Gamma^l{}_{im}
--\Gamma^m{}_{ik}\Gamma^l{}_{jm}\right).
-```
-
-Вычислим две компоненты, необходимые для последующей свёртки. Для $l=\theta$, $k=\varphi$, $i=\theta$, $j=\varphi$ получаем
-
-```math
-\begin{aligned}
-R^\theta{}_{\varphi\theta\varphi}
-&=\partial_\theta\Gamma^\theta{}_{\varphi\varphi}
--\partial_\varphi\Gamma^\theta{}_{\theta\varphi}\\
-&\quad+\Gamma^\theta{}_{\varphi\varphi}\Gamma^\theta{}_{\theta\theta}
-+\Gamma^\varphi{}_{\varphi\varphi}\Gamma^\theta{}_{\theta\varphi}\\
-&\quad-\Gamma^\theta{}_{\theta\varphi}\Gamma^\theta{}_{\varphi\theta}
--\Gamma^\varphi{}_{\theta\varphi}\Gamma^\theta{}_{\varphi\varphi}\\
-&=\partial_\theta(-\sin\theta\cos\theta)-0
-+(-\sin\theta\cos\theta)\cdot0+0\cdot0\\
-&\quad-0\cdot0-\cot\theta(-\sin\theta\cos\theta)\\
-&=\sin^2\theta-\cos^2\theta+\cos^2\theta\\
-&=\sin^2\theta.
-\end{aligned}
-```
-
-Далее берём $l=\varphi$, $k=\theta$, $i=\varphi$, $j=\theta$:
-
-```math
-\begin{aligned}
-R^\varphi{}_{\theta\varphi\theta}
-&=\partial_\varphi\Gamma^\varphi{}_{\theta\theta}
--\partial_\theta\Gamma^\varphi{}_{\varphi\theta}\\
-&\quad+\Gamma^\theta{}_{\theta\theta}\Gamma^\varphi{}_{\varphi\theta}
-+\Gamma^\varphi{}_{\theta\theta}\Gamma^\varphi{}_{\varphi\varphi}\\
-&\quad-\Gamma^\theta{}_{\varphi\theta}\Gamma^\varphi{}_{\theta\theta}
--\Gamma^\varphi{}_{\varphi\theta}\Gamma^\varphi{}_{\theta\varphi}\\
-&=0-\partial_\theta(\cot\theta)
-+0\cdot\cot\theta+0\cdot0-0\cdot0-\cot^2\theta\\
-&=\frac1{\sin^2\theta}-\frac{\cos^2\theta}{\sin^2\theta}\\
-&=\frac{1-\cos^2\theta}{\sin^2\theta}=1.
-\end{aligned}
-```
-
-Для смешанных элементов Риччи понадобятся нулевые компоненты. Здесь важно проверить их по формуле, поскольку нулевые смешанные коэффициенты метрики сами по себе ещё не определяют все компоненты кривизны. Первая из них:
-
-```math
-\begin{aligned}
-R^\theta{}_{\theta\theta\varphi}
-&=\partial_\theta\Gamma^\theta{}_{\varphi\theta}
--\partial_\varphi\Gamma^\theta{}_{\theta\theta}\\
-&\quad+\Gamma^\theta{}_{\varphi\theta}\Gamma^\theta{}_{\theta\theta}
-+\Gamma^\varphi{}_{\varphi\theta}\Gamma^\theta{}_{\theta\varphi}\\
-&\quad-\Gamma^\theta{}_{\theta\theta}\Gamma^\theta{}_{\varphi\theta}
--\Gamma^\varphi{}_{\theta\theta}\Gamma^\theta{}_{\varphi\varphi}\\
-&=0-0+0\cdot0+\cot\theta\cdot0
--0\cdot0-0\cdot(-\sin\theta\cos\theta)=0.
-\end{aligned}
-```
-
-Для второй имеем
-
-```math
-\begin{aligned}
-R^\varphi{}_{\varphi\theta\varphi}
-&=\partial_\theta\Gamma^\varphi{}_{\varphi\varphi}
--\partial_\varphi\Gamma^\varphi{}_{\theta\varphi}\\
-&\quad+\Gamma^\theta{}_{\varphi\varphi}\Gamma^\varphi{}_{\theta\theta}
-+\Gamma^\varphi{}_{\varphi\varphi}\Gamma^\varphi{}_{\theta\varphi}\\
-&\quad-\Gamma^\theta{}_{\theta\varphi}\Gamma^\varphi{}_{\varphi\theta}
--\Gamma^\varphi{}_{\theta\varphi}\Gamma^\varphi{}_{\varphi\varphi}\\
-&=0-\partial_\varphi(\cot\theta)
-+(-\sin\theta\cos\theta)\cdot0+0\cdot\cot\theta\\
-&\quad-0\cdot\cot\theta-\cot\theta\cdot0=0.
-\end{aligned}
-```
-
-Последняя производная нулевая, поскольку $\cot\theta$ не зависит от $\varphi$.
-
-При $i=j$ все компоненты $R^l{}_{kii}$ равны нулю вследствие кососимметрии. При перестановке различных $i,j$ знак меняется. Поэтому найденные четыре значения определяют все компоненты в двумерном случае; полный список ненулевых имеет вид
-
-```math
-\begin{aligned}
-R^\theta{}_{\varphi\theta\varphi}&=\sin^2\theta,
-&R^\theta{}_{\varphi\varphi\theta}&=-\sin^2\theta,\\
-R^\varphi{}_{\theta\varphi\theta}&=1,
-&R^\varphi{}_{\theta\theta\varphi}&=-1.
-\end{aligned}
-```
-
-В операторной записи это означает
-
-```math
-R(\partial_\theta,\partial_\varphi)\partial_\theta
-=-\partial_\varphi,
-\qquad
-R(\partial_\theta,\partial_\varphi)\partial_\varphi
-=\sin^2\theta\,\partial_\theta.
-```
-
-### 4.7. Гауссова кривизна
-
-Подставим $X=\partial_\theta$, $Y=\partial_\varphi$ в определение. Числитель равен
-
-```math
-\begin{aligned}
-g\bigl(R(\partial_\theta,\partial_\varphi)\partial_\varphi,
-\partial_\theta\bigr)
-&=g(\sin^2\theta\,\partial_\theta,\partial_\theta)\\
-&=\sin^2\theta\,g_{\theta\theta}
-=a^2\sin^2\theta.
-\end{aligned}
-```
-
-Знаменатель представляет собой определитель матрицы метрики:
-
-```math
-g_{\theta\theta}g_{\varphi\varphi}-g_{\theta\varphi}^2
-=a^2\cdot a^2\sin^2\theta-0=a^4\sin^2\theta.
 ```
 
 Следовательно,
 
 ```math
-\boxed{K=\frac{a^2\sin^2\theta}{a^4\sin^2\theta}
-=\frac1{a^2}.}
+G=\operatorname{diag}(a^2,a^2\sin^2\theta),\qquad
+ds^2=a^2(d\theta^2+\sin^2\theta\,d\varphi^2),
 ```
 
-Кривизна положительна и не зависит от точки. Её зависимость от радиуса — обратный квадрат длины.
+```math
+\det G=a^4\sin^2\theta>0,\qquad
+G^{-1}=\operatorname{diag}\left(a^{-2},(a^2\sin^2\theta)^{-1}\right).
+```
 
-### 4.8. Тензор Риччи
+Ортогональные ненулевые векторы $r_\theta,r_\varphi$ линейно независимы на выбранной области; все деления допустимы, поскольку $a>0$ и $\sin\theta>0$.
 
-Используем выбранную свёртку $\operatorname{Ric}_{kj}=\sum_i R^i{}_{kij}$. Для двух диагональных элементов получаем
+### 4.5. Символы Кристоффеля
+
+Среди производных коэффициентов метрики только
+
+```math
+\partial_\theta g_{\varphi\varphi}=2a^2\sin\theta\cos\theta
+```
+
+не равна тождественно нулю. Формула связности и диагональность $G^{-1}$ дают
 
 ```math
 \begin{aligned}
-\operatorname{Ric}_{\theta\theta}
-&=R^\theta{}_{\theta\theta\theta}
-+R^\varphi{}_{\theta\varphi\theta}=0+1=1,\\
-\operatorname{Ric}_{\varphi\varphi}
-&=R^\theta{}_{\varphi\theta\varphi}
-+R^\varphi{}_{\varphi\varphi\varphi}
-=\sin^2\theta+0=\sin^2\theta.
+\Gamma^\theta{}_{\varphi\varphi}
+&=-\frac12g^{\theta\theta}\partial_\theta g_{\varphi\varphi}
+=-\frac1{2a^2}\,2a^2\sin\theta\cos\theta
+=-\sin\theta\cos\theta,\\
+\Gamma^\varphi{}_{\theta\varphi}
+&=\frac12g^{\varphi\varphi}\partial_\theta g_{\varphi\varphi}
+=\frac{2a^2\sin\theta\cos\theta}{2a^2\sin^2\theta}
+=\cot\theta.
 \end{aligned}
 ```
 
-Смешанные элементы равны
+По отсутствию кручения $\Gamma^\varphi{}_{\varphi\theta}=\cot\theta$. Все остальные символы тождественно нулевые: в общей формуле их слагаемые содержат либо нулевой коэффициент обратной метрики, либо нулевую производную. Постоянный радиус сокращается, поэтому символы в угловых координатах от $a$ не зависят.
+
+### 4.6. Компоненты тензора кривизны
+
+Используем формулу §3.4 с порядком $R^l{}_{kij}$. После исключения нулевых слагаемых две независимые ненулевые компоненты вычисляются так:
 
 ```math
 \begin{aligned}
-\operatorname{Ric}_{\theta\varphi}
-&=R^\theta{}_{\theta\theta\varphi}
-+R^\varphi{}_{\theta\varphi\varphi}=0+0=0,\\
-\operatorname{Ric}_{\varphi\theta}
-&=R^\theta{}_{\varphi\theta\theta}
-+R^\varphi{}_{\varphi\varphi\theta}=0+0=0.
+R^\theta{}_{\varphi\theta\varphi}
+&=\partial_\theta\Gamma^\theta{}_{\varphi\varphi}
+-\Gamma^\varphi{}_{\theta\varphi}\Gamma^\theta{}_{\varphi\varphi}\\
+&=\partial_\theta(-\sin\theta\cos\theta)
+-\cot\theta(-\sin\theta\cos\theta)\\
+&=\sin^2\theta-\cos^2\theta+\cos^2\theta=\sin^2\theta,\\[2mm]
+R^\varphi{}_{\theta\varphi\theta}
+&=-\partial_\theta\Gamma^\varphi{}_{\theta\varphi}
+-(\Gamma^\varphi{}_{\theta\varphi})^2\\
+&=-\partial_\theta(\cot\theta)-\cot^2\theta
+=\frac1{\sin^2\theta}-\frac{\cos^2\theta}{\sin^2\theta}=1.
 \end{aligned}
 ```
 
-В первой строке второе слагаемое, а во второй строке первое обращаются в нуль из-за равных последних индексов. Остальные два нуля получены прямым вычислением и кососимметрией.
-
-Таким образом,
+Для остальных независимых значений та же подстановка даёт
 
 ```math
-(\operatorname{Ric}_{ij})=
-\begin{pmatrix}1&0\\0&\sin^2\theta\end{pmatrix}
-=\frac1{a^2}
-\begin{pmatrix}a^2&0\\0&a^2\sin^2\theta\end{pmatrix},
-\qquad
-\boxed{\operatorname{Ric}=\frac1{a^2}g.}
+R^\theta{}_{\theta\theta\varphi}=0,\qquad
+R^\varphi{}_{\varphi\theta\varphi}=-\partial_\varphi(\cot\theta)=0.
 ```
 
-Сравнение проведено для всех элементов, а симметрия тензора Риччи видна непосредственно из полученной матрицы.
-
-### 4.9. Скалярная кривизна
-
-Разворачиваем свёртку с обратной метрикой:
+В первой компоненте каждый член содержит нулевой символ связности или его производную; во второй $\cot\theta$ не зависит от $\varphi$. При равных последних индексах $R$ равен нулю, а их перестановка меняет знак. Таким образом, все компоненты определены, в частности
 
 ```math
-\begin{aligned}
-\operatorname{Scal}
-&=g^{\theta\theta}\operatorname{Ric}_{\theta\theta}
-+g^{\theta\varphi}\operatorname{Ric}_{\theta\varphi}
-+g^{\varphi\theta}\operatorname{Ric}_{\varphi\theta}
-+g^{\varphi\varphi}\operatorname{Ric}_{\varphi\varphi}\\
-&=\frac1{a^2}\cdot1+0+0
-+\frac1{a^2\sin^2\theta}\sin^2\theta\\
-&=\frac1{a^2}+\frac1{a^2}.
-\end{aligned}
-```
-
-Поэтому
-
-```math
-\boxed{\operatorname{Scal}=\frac2{a^2}=2K.}
-```
-
-Соотношение $\operatorname{Scal}=2K$ здесь получено после явных свёрток; оно согласуется со стандартной двумерной нормировкой.
-
-### 4.10. Почему результат справедлив на всей сфере
-
-В исходной карте выражения $\cot\theta$ и $(a^2\sin^2\theta)^{-1}$ не определены при $\theta=0,\pi$. В этих точках вектор $r_\varphi$ обращается в нуль: все долготы описывают одну точку. Следовательно, нарушено условие линейной независимости координатных векторов. Сама метрика $g_p(v,v)=|v|^2$ остаётся положительно определённой на двумерной плоскости $p^\perp$ при любом $p\in S_a^2$.
-
-Для любой точки $p$ можно выбрать другую полярную ось, не параллельную $p$, и другой меридианный разрез. Полученная карта содержит $p$ вне своих полюсов и разреза. Её параметризация имеет вид $\widetilde r=Qr$, где $Q$ — поворот евклидова пространства. Поскольку
-
-```math
-\langle Qr_{x^i},Qr_{x^j}\rangle
-=\langle r_{x^i},r_{x^j}\rangle,
-```
-
-метрика в этой карте имеет ту же вычисленную форму. В ней повторяются все вычисления связности и кривизны. Значит, равенства $K=a^{-2}$, $\operatorname{Ric}=a^{-2}g$ и $\operatorname{Scal}=2a^{-2}$ верны и в точках, исключённых первоначальной картой. У сферы нет особой кривизны на координатных полюсах.
-
-### 4.11. Тензорная формула кривизны сферы
-
-Для доказательства локальной симметрии необходимо получить выражение полного тензора. Проверим, что найденные компоненты совпадают с формулой
-
-```math
-\boxed{R(X,Y)Z
-=\frac1{a^2}\bigl(g(Y,Z)X-g(X,Z)Y\bigr).}
-```
-
-Для $X=\partial_\theta$, $Y=\partial_\varphi$, $Z=\partial_\theta$ правая часть даёт
-
-```math
-\frac1{a^2}
-\left(g_{\varphi\theta}\partial_\theta
--g_{\theta\theta}\partial_\varphi\right)
-=\frac1{a^2}(0-a^2\partial_\varphi)
-=-\partial_\varphi.
-```
-
-Для тех же $X,Y$ и $Z=\partial_\varphi$ получаем
-
-```math
-\frac1{a^2}
-\left(g_{\varphi\varphi}\partial_\theta
--g_{\theta\varphi}\partial_\varphi\right)
+R(\partial_\theta,\partial_\varphi)\partial_\theta=-\partial_\varphi,
+\qquad R(\partial_\theta,\partial_\varphi)\partial_\varphi
 =\sin^2\theta\,\partial_\theta.
 ```
 
-Оба результата совпадают с непосредственным вычислением. Для переставленных $X,Y$ знак обеих частей меняется, а для равных базисных $X,Y$ обе части равны нулю. Таким образом проверены все наборы трёх базисных аргументов в двумерном пространстве. По линейности формула верна для любых $X,Y,Z$ в каждой точке карты. Поворотные карты из предыдущего пункта распространяют её на всю сферу.
+### 4.7. Гауссова кривизна
 
-В координатах та же формула записывается как
+Подставим $X=\partial_\theta$, $Y=\partial_\varphi$ в определение секционной кривизны. По вычисленной метрике и кривизне
 
 ```math
-R^l{}_{kij}
-=\frac1{a^2}\left(\delta^l{}_i g_{jk}
--\delta^l{}_j g_{ik}\right).
+K=\frac{g(\sin^2\theta\,\partial_\theta,\partial_\theta)}
+{g_{\theta\theta}g_{\varphi\varphi}-g_{\theta\varphi}^2}
+=\frac{a^2\sin^2\theta}{a^4\sin^2\theta}
+=\frac1{a^2}.
+```
+
+Кривизна положительна, не зависит от точки и масштабируется как обратный квадрат радиуса.
+
+### 4.8. Тензор Риччи
+
+Свёртка $\operatorname{Ric}_{kj}=\sum_iR^i{}_{kij}$ даёт
+
+```math
+\begin{aligned}
+\operatorname{Ric}_{\theta\theta}&=R^\varphi{}_{\theta\varphi\theta}=1,\\
+\operatorname{Ric}_{\varphi\varphi}&=R^\theta{}_{\varphi\theta\varphi}=\sin^2\theta,\\
+\operatorname{Ric}_{\theta\varphi}&=\operatorname{Ric}_{\varphi\theta}=0.
+\end{aligned}
+```
+
+Члены с равными последними индексами нулевые по кососимметрии; оставшиеся смешанные члены занулены в §4.6. Поэтому
+
+```math
+(\operatorname{Ric}_{ij})=\operatorname{diag}(1,\sin^2\theta),
+\qquad \operatorname{Ric}=\frac1{a^2}g.
+```
+
+### 4.9. Скалярная кривизна
+
+Сворачиваем тензор Риччи с обратной метрикой. Ненулевые члены равны
+
+```math
+\operatorname{Scal}
+=g^{\theta\theta}\operatorname{Ric}_{\theta\theta}
++g^{\varphi\varphi}\operatorname{Ric}_{\varphi\varphi}
+=\frac1{a^2}+\frac{\sin^2\theta}{a^2\sin^2\theta}
+=\frac2{a^2}=2K.
+```
+
+Таким образом, равенство $\operatorname{Scal}=2K$ получено явными свёртками в выбранном соглашении о знаке $R$.
+
+### 4.10. Почему результат справедлив на всей сфере
+
+При $\theta=0,\pi$ вектор $r_\varphi$ обращается в нуль, и сферическая карта теряет регулярность. Это координатный дефект: метрика $g_p(v,v)=|v|^2$ на $p^\perp$ остаётся положительно определённой при любом $p\in S_a^2$.
+
+Для любой точки $p$ можно выбрать полярную ось, не проходящую через $p$, и меридианный разрез, не содержащий $p$. Соответствующая карта имеет параметризацию $\widetilde r=Qr$, где $Q$ — поворот. Поскольку $\langle Qr_{x^i},Qr_{x^j}\rangle=\langle r_{x^i},r_{x^j}\rangle$, её метрика имеет ту же форму и все проведённые вычисления применимы в окрестности $p$. На пересечениях карт полученные объекты согласованы как тензоры. Следовательно, значения $K=a^{-2}$, $\operatorname{Ric}=a^{-2}g$, $\operatorname{Scal}=2a^{-2}$ справедливы и на прежних полюсах. Тот же аргумент позволит распространить тензорную формулу ниже на всю сферу.
+
+### 4.11. Тензорная формула кривизны сферы
+
+Проверим по вычисленным компонентам равенство
+
+```math
+R(X,Y)Z=\frac1{a^2}\bigl(g(Y,Z)X-g(X,Z)Y\bigr).
+```
+
+При $X=\partial_\theta$, $Y=\partial_\varphi$ правая часть для двух базисных $Z$ равна
+
+```math
+\begin{aligned}
+Z=\partial_\theta:&\qquad
+\frac1{a^2}(g_{\varphi\theta}\partial_\theta-g_{\theta\theta}\partial_\varphi)
+=-\partial_\varphi,\\
+Z=\partial_\varphi:&\qquad
+\frac1{a^2}(g_{\varphi\varphi}\partial_\theta-g_{\theta\varphi}\partial_\varphi)
+=\sin^2\theta\,\partial_\theta.
+\end{aligned}
+```
+
+Оба результата совпали с §4.6. При перестановке $X,Y$ обе части меняют знак, при равных базисных $X,Y$ обращаются в нуль. Значит, равенство проверено на всех тройках базисных векторов и по тензорности верно для любых $X,Y,Z$. Поворотные карты из §4.10 дают его во всех точках сферы. В координатах
+
+```math
+R^l{}_{kij}=\frac1{a^2}\left(\delta^l{}_i g_{jk}-\delta^l{}_j g_{ik}\right).
 ```
 
 ### 4.12. Ковариантная производная кривизны и локальная симметрия
 
-Радиус $a$ фиксирован и не является функцией точки. Ковариантная производная тензоров удовлетворяет правилу произведения и согласована со свёрткой индексов. Тождественное отображение $I$, заданное равенством $I(X)=X$, также ковариантно постоянно:
+Радиус $a$ постоянен, связность Леви-Чивиты удовлетворяет $\nabla g=0$. Для тождественного отображения $I(X)=X$ имеем
 
 ```math
-(\nabla_W I)(X)=\nabla_W(I(X))-I(\nabla_WX)
-=\nabla_WX-\nabla_WX=0.
+(\nabla_WI)(X)=\nabla_W(I(X))-I(\nabla_WX)=0.
 ```
 
-В найденной формуле кривизны участвуют только постоянный коэффициент $a^{-2}$, метрика $g$ и тождественное отображение, возвращающее аргументы $X$ и $Y$. Для связности Леви-Чивиты $\nabla g=0$. Покажем действие правила произведения непосредственно на векторных полях, учитывая производные всех аргументов:
+Ковариантная производная полного тензора учитывает изменение всех его аргументов:
 
 ```math
 \begin{aligned}
 (\nabla_WR)(X,Y)Z
-&=\nabla_W\bigl(R(X,Y)Z\bigr)
--R(\nabla_WX,Y)Z\\
+&=\nabla_W(R(X,Y)Z)-R(\nabla_WX,Y)Z\\
 &\quad-R(X,\nabla_WY)Z-R(X,Y)(\nabla_WZ).
 \end{aligned}
 ```
 
-Первое слагаемое после подстановки найденного тензора равно
+В формуле §4.11 можно записать $X=I(X)$, $Y=I(Y)$. По правилу Лейбница для тензоров и постоянству $a^{-2}$ получаем
 
 ```math
 \begin{aligned}
-\nabla_W\bigl(R(X,Y)Z\bigr)
-=\frac1{a^2}\bigl(&W(g(Y,Z))X+g(Y,Z)\nabla_WX\\
-&-W(g(X,Z))Y-g(X,Z)\nabla_WY\bigr).
+(\nabla_WR)(X,Y)Z=\frac1{a^2}\bigl(&
+(\nabla_Wg)(Y,Z)I(X)+g(Y,Z)(\nabla_WI)(X)\\
+&-(\nabla_Wg)(X,Z)I(Y)-g(X,Z)(\nabla_WI)(Y)\bigr)=0.
 \end{aligned}
 ```
 
-При вычитании остальных трёх слагаемых члены с $g(Y,Z)\nabla_WX$ и $g(X,Z)\nabla_WY$ сокращаются. После объединения оставшихся членов получаем
+Каждое слагаемое равно нулю вследствие $\nabla g=0$ и $\nabla I=0$. Поля $W,X,Y,Z$ произвольны, поэтому $\nabla R=0$ на всей сфере. Это ковариантное утверждение: обычная производная компоненты, например $\partial_\theta R^\theta{}_{\varphi\theta\varphi}=2\sin\theta\cos\theta$, может быть ненулевой.
 
-```math
-\begin{aligned}
-(\nabla_WR)(X,Y)Z
-=\frac1{a^2}\Bigl(&
-\bigl[W(g(Y,Z))-g(\nabla_WY,Z)-g(Y,\nabla_WZ)\bigr]X\\
-&-\bigl[W(g(X,Z))-g(\nabla_WX,Z)-g(X,\nabla_WZ)\bigr]Y
-\Bigr)\\
-=\frac1{a^2}\Bigl(&
-(\nabla_Wg)(Y,Z)X-(\nabla_Wg)(X,Z)Y\Bigr)=0.
-\end{aligned}
-```
-
-Каждая квадратная скобка равна нулю по согласованности связности с метрикой. Равенство верно для произвольных полей $W,X,Y,Z$, следовательно,
-
-```math
-\boxed{\nabla R=0\quad\text{на всей }S_a^2.}
-```
-
-Обычные производные компонент здесь не обязаны обращаться в нуль. Например,
-
-```math
-\partial_\theta R^\theta{}_{\varphi\theta\varphi}
-=2\sin\theta\cos\theta
-```
-
-не является тождественно нулевой функцией. Ковариантная производная учитывает также изменение координатного базиса.
-
-Применяя сформулированный критерий для римановой метрики со связностью Леви-Чивиты, заключаем: **сфера $S_a^2$ с обычной метрикой локально симметрична**. Полюса первой карты также охвачены доказательством, поскольку формула тензора и равенство $\nabla g=0$ справедливы в любой точке.
+По достаточному критерию §3.5 сфера $S_a^2$ с обычной метрикой локально симметрична. Основание — постоянство полного тензора в ковариантном смысле, доказанное через его представление, а не одно лишь постоянство $K$.
 
 ### 4.13. Короткая геометрическая проверка симметрии
 
-Для фиксированного $p\in S_a^2$ рассмотрим линейное отображение окружающего пространства
+Для фиксированного $p\in S_a^2$ рассмотрим
 
 ```math
-L_p(q)=2\frac{\langle p,q\rangle}{a^2}p-q.
+s_p(q)=2\frac{\langle p,q\rangle}{a^2}p-q.
 ```
 
-В ортогональном разложении $q=\lambda p+v$, $v\perp p$, оно действует как $L_p(q)=\lambda p-v$. Поэтому сохраняет скалярное произведение: для $q=\lambda p+v$ и $q'=\mu p+w$ имеем $\langle L_pq,L_pq'\rangle=\lambda\mu a^2+\langle v,w\rangle=\langle q,q'\rangle$. Следовательно, $L_p$ сохраняет сферу и её индуцированную метрику. Его ограничение $s_p=L_p|_{S_a^2}$ удовлетворяет
-
-```math
-s_p(p)=p,\qquad s_p^2=\operatorname{id},
-\qquad (ds_p)_p(v)=-v\quad(v\in T_pS_a^2=p^\perp).
-```
-
-Изометрия сохраняет связность Леви-Чивиты: перенесённая ею связность вновь согласована с метрикой и не имеет кручения, поэтому совпадает с исходной по единственности. Значит, $s_p\circ\gamma_v$ — геодезическая с начальной точкой $p$ и скоростью $-v$. Те же начальные данные имеет $t\mapsto\gamma_v(-t)$, и единственность геодезической даёт $s_p(\gamma_v(t))=\gamma_v(-t)$. В малой нормальной окрестности отсюда следует $s_p(\exp_pv)=\exp_p(-v)$: построена именно изометрическая геодезическая симметрия в $p$. Антиподальное отображение $q\mapsto-q$ такой проверке неподвижной точки не удовлетворяет, поскольку переводит $p$ в $-p$.
+Окружающее линейное отображение действует как $\lambda p+v\mapsto\lambda p-v$ при $v\perp p$, поэтому ортогонально и сохраняет сферу с её метрикой. Оно фиксирует $p$, а на $T_pS_a^2=p^\perp$ его дифференциал равен $-\operatorname{id}$. Изометрия сохраняет геодезические; по единственности геодезической с заданными начальными точкой и скоростью получаем $s_p(\exp_pv)=\exp_p(-v)$ при малом $v$. Это геодезическая симметрия в $p$, тогда как антиподальное отображение $q\mapsto-q$ не фиксирует $p$.
 
 ### 4.14. Ответ для сферы из задания
 
-Для радиуса $a>0$ доказано
+Для постоянного радиуса $a>0$ получено
 
 ```math
-K=\frac1{a^2},\qquad
-\operatorname{Scal}=\frac2{a^2},\qquad \nabla R=0.
+K=\frac1{a^2},\qquad \operatorname{Scal}=\frac2{a^2},\qquad \nabla R=0.
 ```
 
-В принятой стандартной нормировке $S^2=S_1^2$ окончательный ответ имеет вид
+При $S^2=S_1^2$ окончательный ответ:
 
 ```math
-\boxed{K=1,\qquad \operatorname{Scal}=2,
-\qquad S^2\text{ с обычной метрикой локально симметрична}.}
+K=1,\qquad \operatorname{Scal}=2,\qquad \nabla R=0.
 ```
+
+Следовательно, стандартная сфера с обычной метрикой локально симметрична.
 
 ## Заключение
 
