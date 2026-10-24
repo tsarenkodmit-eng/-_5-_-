@@ -88,6 +88,8 @@ O(p,q)=\{L\in GL(n,\mathbb R):L^{\mathsf T}J_{p,q}L=J_{p,q}\},
 
 ## 2. Псевдоевклидова геометрия и специальная теория относительности
 
+Связь с СТО состоит в том, что пространство событий снабжается псевдоевклидовой формой, а переходы между инерциальными системами являются её изометриями. Для линейной части перехода условие главы 1 принимает вид $\Lambda^{\mathsf T}\eta\Lambda=\eta$. Сохранение этой формы позволяет вывести преобразование Лоренца, а из него — соотношения для времени, длины и скорости. Ниже эти следствия сопоставлены с измерениями и рисунками.
+
 ### 2.1. События и пространство Минковского
 
 Событие определяется местом и временем. В инерциальной системе свободная частица движется равномерно и прямолинейно. Введём $x^0=ct$, $x^1=x$, $x^2=y$, $x^3=z$, где $c$ — скорость света в вакууме; все четыре координаты имеют размерность длины. События — точки аффинного пространства, а разности координат — векторы разделения. Форма Минковского в этих координатах равна [3, §§1–2, 6]
@@ -174,6 +176,8 @@ d\tau&=dt\sqrt{1-\frac{|\mathbf u|^2}{c^2}},\\
 
 Отсюда $\Delta t=\gamma\Delta\tau$: в $K$ свет проходит больший путь между теми же событиями начала и конца цикла, сохраняя скорость $c$.
 
+Например, при $v=0{,}6c$ коэффициент $\gamma=1{,}25$. Если между двумя последовательными возвращениями света часы отсчитали $\Delta\tau=1$ нс, то в системе $K$ между теми же событиями проходит $\Delta t=1{,}25$ нс. Сравниваются два события на мировой линии одних движущихся часов.
+
 ![Световые часы](figures/02-light-clock.svg)
 
 Рисунок 2 — Один цикл световых часов в двух инерциальных системах
@@ -196,7 +200,7 @@ L_0=\Delta x'=\gamma(\Delta x-v\Delta t)=\gamma L,
 \qquad L=\frac{L_0}{\gamma}.
 ```
 
-В $K'$ координаты концов неподвижны, поэтому их разность равна $L_0$ и для выбранных событий. На рисунке 3 горизонтальный отрезок $AB$ соответствует измерению при одном $t$ в $K$. Для одновременности в $K'$ нужна другая пара событий — $A,C$, лежащая на прямой $t'=0$. При $v=0{,}6c$ имеем $\gamma=1{,}25$ и $L=0{,}8L_0$.
+В $K'$ координаты концов неподвижны, поэтому их разность равна $L_0$ и для выбранных событий. На рисунке 3 горизонтальный отрезок $AB$ соответствует измерению при одном $t$ в $K$. Для одновременности в $K'$ нужна другая пара событий — $A,C$, лежащая на прямой $t'=0$. Например, для стержня собственной длины $L_0=1$ м при $v=0{,}6c$ имеем $\gamma=1{,}25$ и $L=0{,}8$ м. Такое значение получается при одновременной в $K$ регистрации положений концов; фотография стержня сама по себе не задаёт это измерение, поскольку свет от концов может доходить до наблюдателя за разное время.
 
 ![Измерение длины движущегося стержня](figures/03-length.svg)
 
@@ -213,6 +217,8 @@ u_z'=\frac{u_z}{\gamma(1-vu_x/c^2)}.
 ```
 
 При $|\mathbf u|<c$ и $|v|<c$ знаменатель положителен. Сохранение положительного интервала при $dt'>0$ означает, что преобразованная скорость также меньше $c$. В частности, частица с $\mathbf u=(v,0,0)$ покоится в $K'$. Для луча света вдоль положительного направления $x$ подстановка $u_x=c$ даёт $u_x'=c$.
+
+Например, пусть частица в $K$ движется вдоль положительного направления $x$ со скоростью $u_x=0{,}8c$, а $K'$ движется в том же направлении со скоростью $v=0{,}6c$. Тогда $u_x'=(0{,}8-0{,}6)c/(1-0{,}48)=5c/13\approx0{,}385c$, $u_y'=u_z'=0$. В знаменателе учитывается изменение промежутка времени между системами, поэтому одного вычитания $u_x-v$ недостаточно.
 
 ### 2.7. Четырёхвекторы и метрический тензор
 
@@ -552,6 +558,204 @@ K=1,\qquad \operatorname{Scal}=2,\qquad \nabla R=0.
 
 ## Использованная литература
 
-1. Постников М. М. Лекции по геометрии. Семестр II. Линейная алгебра. 3-е изд., испр. СПб.: Лань, 2009. 400 с. URL: <https://publ.lib.ru/ARCHIVES/P/POSTNIKOV_Mihail_Mihaylovich_(matematik)/> (дата обращения: 23.10.2026).
-2. Постников М. М. Лекции по геометрии. Семестр V. Риманова геометрия. М.: Факториал, 1998. 496 с. URL: <https://djvu.online/file/ogoEPpiGy7UEj> (дата обращения: 23.10.2026).
-3. Ландау Л. Д., Лифшиц Е. М. Теоретическая физика. Том II. Теория поля. 6-е изд., испр. и доп. М.: Наука, 1973. URL: <https://radfiz.org.ua/files/k2/s3/TeopMex/Landau%2CLifshic/Landay_II.pdf> (дата обращения: 23.10.2026).
+1. Постников М. М. Лекции по геометрии. Семестр II. Линейная алгебра. 3-е изд., испр. СПб.: Лань, 2009. 400 с. Электронные издания: [каталог книг автора](https://www.publ.lib.ru/ARCHIVES/P/POSTNIKOV_Mihail_Mihaylovich_%28matematik%29/_Postnikov_M.M..html) (дата обращения: 24.10.2026).
+2. Постников М. М. Лекции по геометрии. Семестр V. Риманова геометрия. М.: Факториал, 1998. 496 с. Электронная версия: [текст и скан книги](https://djvu.online/file/ogoEPpiGy7UEj) (дата обращения: 24.10.2026).
+3. Ландау Л. Д., Лифшиц Е. М. Теоретическая физика. Том II. Теория поля. 6-е изд., испр. и доп. М.: Наука, 1973. Электронная версия: [скан издания 1973 года](https://radfiz.org.ua/files/k2/s3/TeopMex/Landau%2CLifshic/Landay_II.pdf) (дата обращения: 24.10.2026).
+
+Для дополнительного чтения
+
+O’Neill B. Semi-Riemannian Geometry with Applications to Relativity. Academic Press, 1983. Серия Pure and Applied Mathematics. Vol. 103. ISBN 978-0-12-526740-3. [Страница книги у издателя](https://shop.elsevier.com/books/semi-riemannian-geometry-with-applications-to-relativity/oneill/978-0-12-526740-3) (дата обращения: 24.10.2026).
+
+## Приложение А. Краткая математическая часть
+
+### А.1. Преобразование Лоренца и его следствия
+
+Стандартная конфигурация $K\to K'$; скорость $v$ вдоль $x$, сонаправленные оси; начала совпадают при $t=t'=0$.
+
+```math
+\begin{aligned}
+&X=ct,\qquad \beta=v/c,\qquad |\beta|<1,\qquad y'=y,\quad z'=z,\\
+&x'=A(x-\beta X),\qquad X'=BX+Dx,\\
+&(BX+Dx)^2-A^2(x-\beta X)^2=X^2-x^2,\\
+&B^2-A^2\beta^2=1,\qquad D^2-A^2=-1,\qquad BD+A^2\beta=0,\\
+&B\ne0,\qquad D=-\frac{A^2\beta}{B},\qquad
+A^2(B^2-A^2\beta^2)=B^2\ \Longrightarrow\ A^2=B^2,\\
+&A(0)=B(0)=1,\quad A,B\ne0,\quad A,B\text{ непрерывны}
+\ \Longrightarrow\ A=B>0,\\
+&D=-A\beta,\qquad A^2(1-\beta^2)=1,\qquad
+A=B=\gamma=\frac1{\sqrt{1-\beta^2}},\\
+&x'=\gamma(x-vt),\qquad
+t'=\gamma\left(t-\frac{vx}{c^2}\right),\qquad y'=y,\quad z'=z,\\
+&X'^2-x'^2=\gamma^2\bigl((X-\beta x)^2-(x-\beta X)^2\bigr)\\
+&\hspace{25mm}=\gamma^2(1-\beta^2)(X^2-x^2)=X^2-x^2,\\
+&\Delta s'^2=c^2\Delta t'^2-\Delta x'^2-\Delta y'^2-\Delta z'^2
+=\Delta s^2.
+\end{aligned}
+```
+
+Собственное время; световые часы; стержень, покоящийся в $K'$.
+
+```math
+\begin{aligned}
+&dt>0,\quad |\mathbf u|<c,\qquad
+c^2d\tau^2=ds^2=c^2dt^2\left(1-\frac{|\mathbf u|^2}{c^2}\right),\\
+&d\tau=dt\sqrt{1-\frac{|\mathbf u|^2}{c^2}},\qquad
+\tau_2-\tau_1=\int_{t_1}^{t_2}\sqrt{1-\frac{|\mathbf u(t)|^2}{c^2}}\,dt,\\
+&\mathbf u=\mathrm{const}\ \Longrightarrow\
+\Delta t=\gamma_u\Delta\tau,\qquad
+\gamma_u=\left(1-|\mathbf u|^2/c^2\right)^{-1/2},\\
+&\left(\frac{c\Delta t}{2}\right)^2
+=h^2+\left(\frac{v\Delta t}{2}\right)^2,\qquad
+\Delta\tau=\frac{2h}{c},\\
+&\Delta t=\frac{2h}{c\sqrt{1-v^2/c^2}}=\gamma\Delta\tau
+\qquad (\text{полный цикл часов}),\\
+&\Delta t=0\ \Longrightarrow\
+\Delta t'=-\gamma\frac{v\Delta x}{c^2},\\
+&L_0=\Delta x'=\gamma(\Delta x-v\Delta t)
+=\gamma L\ \Longrightarrow\ L=\frac{L_0}{\gamma}
+\qquad (\Delta t=0).
+\end{aligned}
+```
+
+Скорости: $\mathbf u=d\mathbf r/dt$, $|\mathbf u|\le c$, $|v|<c$.
+
+```math
+\begin{aligned}
+&dx'=\gamma(dx-v\,dt),\qquad
+dt'=\gamma\left(dt-\frac{v}{c^2}dx\right),\qquad dy'=dy,\quad dz'=dz,\\
+&dt'=\gamma\left(1-\frac{vu_x}{c^2}\right)dt>0
+\qquad (dt>0,\ |\mathbf u|\le c),\\
+&u_x'=\frac{dx'}{dt'}=\frac{u_x-v}{1-vu_x/c^2},\\
+&u_y'=\frac{u_y}{\gamma(1-vu_x/c^2)},\qquad
+u_z'=\frac{u_z}{\gamma(1-vu_x/c^2)},\\
+&|\mathbf u|<c:\quad c^2dt'^2-|d\mathbf r'|^2
+=c^2dt^2-|d\mathbf r|^2>0\ \Longrightarrow\ |\mathbf u'|<c,\\
+&\mathbf u=(v,0,0)\ \Longrightarrow\ \mathbf u'=0,\\
+&\text{луч вдоль }x:\quad (u_x,u_y,u_z)=(c,0,0)
+\ \Longrightarrow\ u_x'=\frac{c-v}{1-v/c}=c.
+\end{aligned}
+```
+
+### А.2. Сфера: метрика, кривизна и локальная симметрия
+
+Параметризация и метрика; $a>0$, $0<\theta<\pi$, $\alpha<\varphi<\alpha+2\pi$.
+
+```math
+\begin{aligned}
+&S_a^2=\{p:\langle p,p\rangle=a^2\},\qquad
+T_pS_a^2=p^\perp,\qquad g_p(v,w)=\langle v,w\rangle,\\
+&r(\theta,\varphi)
+=a(\sin\theta\cos\varphi,\sin\theta\sin\varphi,\cos\theta),\\
+&r_\theta=a(\cos\theta\cos\varphi,\cos\theta\sin\varphi,-\sin\theta),\\
+&r_\varphi=a(-\sin\theta\sin\varphi,\sin\theta\cos\varphi,0),\\
+&g_{\theta\theta}=\langle r_\theta,r_\theta\rangle
+=a^2(\cos^2\theta+\sin^2\theta)=a^2,\\
+&g_{\theta\varphi}
+=a^2\cos\theta\sin\theta(-\cos\varphi\sin\varphi+\sin\varphi\cos\varphi)=0,\\
+&g_{\varphi\varphi}
+=a^2\sin^2\theta(\sin^2\varphi+\cos^2\varphi)=a^2\sin^2\theta,\\
+&G=\operatorname{diag}(a^2,a^2\sin^2\theta),\qquad
+G^{-1}=\operatorname{diag}\left(a^{-2},(a^2\sin^2\theta)^{-1}\right),\\
+&ds^2=a^2(d\theta^2+\sin^2\theta\,d\varphi^2),\qquad
+\det G=a^4\sin^2\theta>0.
+\end{aligned}
+```
+
+Связность и кривизна; $R(\partial_i,\partial_j)\partial_k=R^l{}_{kij}\partial_l$.
+
+```math
+\begin{aligned}
+&\partial_\theta g_{\varphi\varphi}=2a^2\sin\theta\cos\theta,
+\qquad \text{остальные }\partial_k g_{ij}=0,\\
+&\Gamma^\theta{}_{\varphi\varphi}
+=-\frac1{2a^2}\,2a^2\sin\theta\cos\theta
+=-\sin\theta\cos\theta,\\
+&\Gamma^\varphi{}_{\theta\varphi}
+=\Gamma^\varphi{}_{\varphi\theta}
+=\frac{2a^2\sin\theta\cos\theta}{2a^2\sin^2\theta}
+=\cot\theta,\qquad \text{остальные }\Gamma^k{}_{ij}=0,\\
+&R^\theta{}_{\varphi\theta\varphi}
+=\partial_\theta\Gamma^\theta{}_{\varphi\varphi}
+-\Gamma^\varphi{}_{\theta\varphi}\Gamma^\theta{}_{\varphi\varphi}\\
+&\hspace{17mm}=\partial_\theta(-\sin\theta\cos\theta)
+-\cot\theta(-\sin\theta\cos\theta)\\
+&\hspace{17mm}=\sin^2\theta-\cos^2\theta+\cos^2\theta=\sin^2\theta,\\
+&R^\varphi{}_{\theta\varphi\theta}
+=-\partial_\theta\Gamma^\varphi{}_{\theta\varphi}
+-(\Gamma^\varphi{}_{\theta\varphi})^2\\
+&\hspace{17mm}=-\partial_\theta(\cot\theta)-\cot^2\theta
+=\frac1{\sin^2\theta}-\frac{\cos^2\theta}{\sin^2\theta}=1,\\
+&R^\theta{}_{\theta\theta\varphi}=0,\qquad
+R^\varphi{}_{\varphi\theta\varphi}=-\partial_\varphi(\cot\theta)=0,\\
+&R^l{}_{kji}=-R^l{}_{kij},\qquad R^l{}_{kii}=0.
+\end{aligned}
+```
+
+Гауссова кривизна, Риччи и скалярная кривизна.
+
+```math
+\begin{aligned}
+&K=\frac{g(R(\partial_\theta,\partial_\varphi)\partial_\varphi,
+\partial_\theta)}{g_{\theta\theta}g_{\varphi\varphi}-g_{\theta\varphi}^2}
+=\frac{a^2\sin^2\theta}{a^4\sin^2\theta}=\frac1{a^2},\\
+&\operatorname{Ric}_{kj}=\sum_iR^i{}_{kij},\\
+&\operatorname{Ric}_{\theta\theta}=R^\varphi{}_{\theta\varphi\theta}=1,
+\qquad \operatorname{Ric}_{\varphi\varphi}
+=R^\theta{}_{\varphi\theta\varphi}=\sin^2\theta,\\
+&\operatorname{Ric}_{\theta\varphi}
+=\operatorname{Ric}_{\varphi\theta}=0,\qquad
+(\operatorname{Ric}_{ij})=\operatorname{diag}(1,\sin^2\theta)
+=\frac1{a^2}G,\\
+&\operatorname{Scal}=g^{\theta\theta}\operatorname{Ric}_{\theta\theta}
++g^{\varphi\varphi}\operatorname{Ric}_{\varphi\varphi}
+=\frac1{a^2}+\frac{\sin^2\theta}{a^2\sin^2\theta}
+=\frac2{a^2}=2K.
+\end{aligned}
+```
+
+Тензорная формула; $Q$ — поворот $\mathbb R^3$.
+
+```math
+\begin{aligned}
+&\frac1{a^2}(g_{\varphi\theta}\partial_\theta
+-g_{\theta\theta}\partial_\varphi)
+=-\partial_\varphi
+=R(\partial_\theta,\partial_\varphi)\partial_\theta,\\
+&\frac1{a^2}(g_{\varphi\varphi}\partial_\theta
+-g_{\theta\varphi}\partial_\varphi)
+=\sin^2\theta\,\partial_\theta
+=R(\partial_\theta,\partial_\varphi)\partial_\varphi,\\
+&R(X,Y)Z=\frac1{a^2}\bigl(g(Y,Z)X-g(X,Z)Y\bigr),\\
+&R^l{}_{kij}=\frac1{a^2}
+\left(\delta^l{}_i g_{jk}-\delta^l{}_j g_{ik}\right),\\
+&U=(0,\pi)\times(\alpha,\alpha+2\pi),\qquad
+S_a^2=\bigcup_Q Qr(U),\\
+&\widetilde r=Qr,\qquad
+\langle\widetilde r_i,\widetilde r_j\rangle
+=\langle Qr_i,Qr_j\rangle=\langle r_i,r_j\rangle,\\
+&K=a^{-2},\quad \operatorname{Ric}=a^{-2}g,\quad
+\operatorname{Scal}=2a^{-2}\quad\text{на }S_a^2,\\
+&R(X,Y)Z=a^{-2}(g(Y,Z)X-g(X,Z)Y)\quad\text{на }S_a^2.
+\end{aligned}
+```
+
+Полная ковариантная производная; $a=\mathrm{const}$, $\nabla g=0$.
+
+```math
+\begin{aligned}
+(\nabla_WR)(X,Y)Z
+&=\nabla_W(R(X,Y)Z)-R(\nabla_WX,Y)Z\\
+&\quad-R(X,\nabla_WY)Z-R(X,Y)(\nabla_WZ),\\
+a^2(\nabla_WR)(X,Y)Z
+&=W(g(Y,Z))X+g(Y,Z)\nabla_WX\\
+&\quad-W(g(X,Z))Y-g(X,Z)\nabla_WY\\
+&\quad-g(Y,Z)\nabla_WX+g(\nabla_WX,Z)Y\\
+&\quad-g(\nabla_WY,Z)X+g(X,Z)\nabla_WY\\
+&\quad-g(Y,\nabla_WZ)X+g(X,\nabla_WZ)Y\\
+&=\bigl(W(g(Y,Z))-g(\nabla_WY,Z)-g(Y,\nabla_WZ)\bigr)X\\
+&\quad-\bigl(W(g(X,Z))-g(\nabla_WX,Z)-g(X,\nabla_WZ)\bigr)Y\\
+&=(\nabla_Wg)(Y,Z)X-(\nabla_Wg)(X,Z)Y=0,\\
+\nabla R&=0\ \Longrightarrow\ S_a^2\text{ локально симметрична},\\
+ a=1:&\qquad K=1,\qquad \operatorname{Scal}=2,\qquad \nabla R=0.
+\end{aligned}
+```
