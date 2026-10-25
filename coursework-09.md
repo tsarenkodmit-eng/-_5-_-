@@ -266,6 +266,28 @@ t_{\text{пр}}=\frac hv\approx33{,}42\ \text{мкс},\qquad
 
 Это согласуется с измерением. Здесь приведён лабораторный опыт, независимый от принятой выше модели прохождения атмосферы. При движении по окружности направление скорости меняется, но её модуль и коэффициент $\gamma$ остаются постоянными; собственное время суммируется вдоль всей траектории.
 
+**Космический масштаб: нейтроны.** У свободного нейтрона среднее собственное время жизни $\tau_n\approx878{,}4$ с, то есть около 15 минут, а энергия покоя $m_nc^2\approx939{,}6$ МэВ [4, таблица нейтрона, с. 1, 3]. Рассмотрим полную энергию $E=10^{18}$ эВ в приближённо инерциальной системе Земли; гравитацией и взаимодействиями в пути пренебрежём. По стандартной формуле $E=\gamma m_nc^2$ [3, §9]
+
+```math
+\begin{aligned}
+\gamma&=\frac{10^{18}}{939{,}6\cdot10^6}\approx1{,}06\cdot10^9,
+\qquad \tau_{\oplus}=\gamma\tau_n\approx3{,}0\cdot10^4\ \text{лет},\\
+L_n&=\gamma v\tau_n\approx9{,}1\ \text{кпк},\qquad v\approx c.
+\end{aligned}
+```
+
+Здесь $L_n$ — средний путь до распада; 1 кпк — около 3260 световых лет. Для условного источника на расстоянии $D=8$ кпк
+
+```math
+\begin{aligned}
+t_{\text{пр}}&\approx\frac Dc\approx2{,}6\cdot10^4\ \text{лет},
+\qquad \Delta\tau=\frac{t_{\text{пр}}}{\gamma}\approx13\ \text{мин},\\
+P&=\exp\left(-\frac{D}{L_n}\right)\approx0{,}41.
+\end{aligned}
+```
+
+Тысячи лет пролёта в системе Земли совместимы с минутами собственного времени. Около 41% — расчётная доля нераспавшихся частиц, а не доля регистраций детектором. Это оценка возможности долететь от источника, а не сообщение о его обнаружении: поиск Pierre Auger, опубликованный в 2012 году, не выявил статистически значимого избытка событий от точечных нейтронных источников [7].
+
 **Часы GPS: СТО и ОТО.** Для спутниковых и наземных часов существенны два разных вклада. В приближении слабого стационарного поля и малых скоростей за промежуток $T$ разность их показаний имеет вид
 
 ```math
@@ -334,7 +356,7 @@ R^l{}_{kij}=\partial_i\Gamma^l{}_{jk}-\partial_j\Gamma^l{}_{ik}
 K=\frac{g(R(X,Y)Y,X)}{g(X,X)g(Y,Y)-g(X,Y)^2}.
 ```
 
-На поверхности плоскость $T_pM$ единственна, и $K$ не зависит от выбора её базиса. Постоянная метрика Минковского имеет $\Gamma=0$, $R=0$: неопределённая сигнатура сама по себе не означает кривизну.
+На поверхности плоскость $T_pM$ единственна, и $K$ не зависит от выбора её базиса. В инерциальных координатах метрика Минковского постоянна, поэтому $\Gamma=0$ и $R=0$: неопределённая сигнатура сама по себе не означает кривизну.
 
 ### 3.3. Локальная геодезическая симметрия
 
@@ -591,17 +613,19 @@ K=1,\qquad \operatorname{Scal}=2,\qquad \nabla R=0.
 
 ## Использованная литература
 
-1. Постников М. М. Лекции по геометрии. Семестр II. Линейная алгебра. 3-е изд., испр. СПб.: Лань, 2009. 400 с. Электронные издания: [каталог книг автора](https://www.publ.lib.ru/ARCHIVES/P/POSTNIKOV_Mihail_Mihaylovich_%28matematik%29/_Postnikov_M.M..html) (дата обращения: 24.10.2026).
-2. Постников М. М. Лекции по геометрии. Семестр V. Риманова геометрия. М.: Факториал, 1998. 496 с. Электронная версия: [текст и скан книги](https://djvu.online/file/ogoEPpiGy7UEj) (дата обращения: 24.10.2026).
-3. Ландау Л. Д., Лифшиц Е. М. Теоретическая физика. Том II. Теория поля. 6-е изд., испр. и доп. М.: Наука, 1973. Электронная версия: [скан издания 1973 года](https://radfiz.org.ua/files/k2/s3/TeopMex/Landau%2CLifshic/Landay_II.pdf) (дата обращения: 24.10.2026).
+1. Постников М. М. Лекции по геометрии. Семестр II. Линейная алгебра. 3-е изд., испр. СПб.: Лань, 2009. 400 с. [Каталог изданий](https://www.publ.lib.ru/ARCHIVES/P/POSTNIKOV_Mihail_Mihaylovich_%28matematik%29/_Postnikov_M.M..html) (дата обращения: 24.10.2026).
+2. Постников М. М. Лекции по геометрии. Семестр V. Риманова геометрия. М.: Факториал, 1998. 496 с. [Электронный текст](https://djvu.online/file/ogoEPpiGy7UEj) (дата обращения: 24.10.2026).
+3. Ландау Л. Д., Лифшиц Е. М. Теоретическая физика. Том II. Теория поля. 6-е изд., испр. и доп. М.: Наука, 1973. [Скан издания](https://radfiz.org.ua/files/k2/s3/TeopMex/Landau%2CLifshic/Landay_II.pdf) (дата обращения: 24.10.2026).
 
-4. Particle Data Group. $\mu$: particle listing // Review of Particle Physics. S. Navas et al. Phys. Rev. D. 2024. Vol. 110. 030001; обновление 2025 года. Раздел «Mean life», с. 2. [Таблица свойств мюона](https://pdg.lbl.gov/2025/listings/rpp2025-list-muon.pdf) (дата обращения: 25.10.2026).
+4. Particle Data Group. Review of Particle Physics // Phys. Rev. D. 2024. Vol. 110. 030001; обновление 2025 года. Таблицы: [мюон, с. 2](https://pdg.lbl.gov/2025/listings/rpp2025-list-muon.pdf); [нейтрон, с. 1, 3](https://pdg.lbl.gov/2025/listings/rpp2025-list-n.pdf) (дата обращения: 25.10.2026).
 5. Bailey J., Borer K., Combley F. et al. Measurements of relativistic time dilatation for positive and negative muons in a circular orbit // Nature. 1977. Vol. 268. P. 301–305. DOI: [10.1038/268301a0](https://doi.org/10.1038/268301a0) (дата обращения: 25.10.2026).
-6. Francis S., Ramsey B., Stein S. et al. Timekeeping and Time Dissemination in a Distributed Space-Based Clock Ensemble // Proceedings of the 34th Annual Precise Time and Time Interval Systems and Applications Meeting. Reston, 3–5 December 2002. P. 201–214. [Полный текст на сайте NIST](https://tf.nist.gov/general/pdf/1869.pdf) (дата обращения: 25.10.2026).
+6. Francis S., Ramsey B., Stein S. et al. Timekeeping and Time Dissemination in a Distributed Space-Based Clock Ensemble // Proc. 34th Annual PTTI Meeting. Reston, 2002. P. 201–214. [Текст NIST](https://tf.nist.gov/general/pdf/1869.pdf) (дата обращения: 25.10.2026).
+
+7. Pierre Auger Collaboration. A Search for Point Sources of EeV Neutrons // Astrophysical Journal. 2012. Vol. 760. Art. 148. [arXiv:1211.4901](https://arxiv.org/abs/1211.4901) (дата обращения: 25.10.2026).
 
 Для дополнительного чтения
 
-O’Neill B. Semi-Riemannian Geometry with Applications to Relativity. Academic Press, 1983. Серия Pure and Applied Mathematics. Vol. 103. ISBN 978-0-12-526740-3. [Страница книги у издателя](https://shop.elsevier.com/books/semi-riemannian-geometry-with-applications-to-relativity/oneill/978-0-12-526740-3) (дата обращения: 24.10.2026).
+O’Neill B. Semi-Riemannian Geometry with Applications to Relativity. Academic Press, 1983. [Страница издателя](https://shop.elsevier.com/books/semi-riemannian-geometry-with-applications-to-relativity/oneill/978-0-12-526740-3) (дата обращения: 24.10.2026).
 
 ## Приложение А. Краткая математическая часть
 
