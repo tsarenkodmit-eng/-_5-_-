@@ -16,41 +16,41 @@
 
 ### 1.1. Билинейная форма и её матрица
 
-Пусть $V$ — вещественное линейное пространство размерности $n$. Векторы пишем жирным, координаты и матрицы — обычным шрифтом. **Билинейная форма** — отображение, линейное по каждому аргументу:
+Пусть $V$ — вещественное линейное пространство размерности $n$. Векторы обозначаем стрелкой; координаты и матрицы — обычными буквами. **Билинейная форма** — отображение, линейное по каждому аргументу:
 ```math
 \begin{aligned}
 g&:V\times V\to\mathbb R,\\
-g(\alpha\mathbf{u}+\beta\mathbf{v},\mathbf{w})
-&=\alpha g(\mathbf{u},\mathbf{w})+\beta g(\mathbf{v},\mathbf{w}),\\
-g(\mathbf{u},\alpha\mathbf{v}+\beta\mathbf{w})
-&=\alpha g(\mathbf{u},\mathbf{v})+\beta g(\mathbf{u},\mathbf{w}),
+g(\alpha\vec{u}+\beta\vec{v},\vec{w})
+&=\alpha g(\vec{u},\vec{w})+\beta g(\vec{v},\vec{w}),\\
+g(\vec{u},\alpha\vec{v}+\beta\vec{w})
+&=\alpha g(\vec{u},\vec{v})+\beta g(\vec{u},\vec{w}),
 \end{aligned}
 ```
-где $\mathbf{u},\mathbf{v},\mathbf{w}\in V$, $\alpha,\beta\in\mathbb R$.
+где $\vec{u},\vec{v},\vec{w}\in V$, $\alpha,\beta\in\mathbb R$.
 
 Форма называется **симметричной**, если
 ```math
-g(\mathbf{u},\mathbf{v})=g(\mathbf{v},\mathbf{u}).
+g(\vec{u},\vec{v})=g(\vec{v},\vec{u}).
 ```
 Условие её **невырожденности** имеет вид
 ```math
-\bigl(\forall\mathbf{v}\in V\quad g(\mathbf{u},\mathbf{v})=0\bigr)
-\quad\Longrightarrow\quad\mathbf{u}=\mathbf{0}.
+\bigl(\forall\vec{v}\in V\quad g(\vec{u},\vec{v})=0\bigr)
+\quad\Longrightarrow\quad\vec{u}=\vec{0}.
 ```
-*Далее рассматриваются симметричные невырожденные формы.* Векторы $\mathbf{u},\mathbf{v}$ ортогональны, если $g(\mathbf{u},\mathbf{v})=0$.
+*Далее рассматриваются симметричные невырожденные формы.* Векторы $\vec{u},\vec{v}$ ортогональны, если $g(\vec{u},\vec{v})=0$.
 
-В базисе $\mathbf{e}_1,\ldots,\mathbf{e}_n$ обозначим координатные столбцы через $\mathbf{x},\mathbf{y}$. Матрица формы и её свойства записываются так:
+В базисе $\vec{e}_1,\ldots,\vec{e}_n$ обозначим координатные столбцы через $\vec{x},\vec{y}$. Матрица формы и её свойства записываются так:
 ```math
 \begin{gathered}
-G=(g_{ij}),\qquad g_{ij}=g(\mathbf{e}_i,\mathbf{e}_j),\\
-g(\mathbf{u},\mathbf{v})=\sum_{i,j=1}^{n}g_{ij}x^iy^j
-=\mathbf{x}^{\mathsf T}G\mathbf{y},\\
+G=(g_{ij}),\qquad g_{ij}=g(\vec{e}_i,\vec{e}_j),\\
+g(\vec{u},\vec{v})=\sum_{i,j=1}^{n}g_{ij}x^iy^j
+=\vec{x}^{\mathsf T}G\vec{y},\\
 G^{\mathsf T}=G,\qquad \det G\ne0.
 \end{gathered}
 ```
 Верхние индексы нумеруют координаты. При смене базиса столбцы матрицы $C$ задают новые базисные векторы в старом базисе. Поэтому
 ```math
-\mathbf{x}=C\mathbf{x}',\qquad G'=C^{\mathsf T}GC.
+\vec{x}=C\vec{x}',\qquad G'=C^{\mathsf T}GC.
 ```
 
 ### 1.2. Сигнатура формы
@@ -59,35 +59,35 @@ G^{\mathsf T}=G,\qquad \det G\ne0.
 ```math
 \begin{aligned}
 G&=J_{p,q}=\operatorname{diag}(E_p,-E_q),\qquad p+q=n,\\
-g(\mathbf{u},\mathbf{u})&=\sum_{i=1}^{p}(x^i)^2-\sum_{i=p+1}^{n}(x^i)^2.
+g(\vec{u},\vec{u})&=\sum_{i=1}^{p}(x^i)^2-\sum_{i=p+1}^{n}(x^i)^2.
 \end{aligned}
 ```
-Числа положительных и отрицательных квадратов $p,q$ не зависят от выбора базиса. Их пара $(p,q)$ называется **сигнатурой формы**. Значение $g(\mathbf{u},\mathbf{u})$ задаёт квадратичную форму.
+Числа положительных и отрицательных квадратов $p,q$ не зависят от выбора базиса. Их пара $(p,q)$ называется **сигнатурой формы**. Значение $g(\vec{u},\vec{u})$ задаёт квадратичную форму.
 
-**Псевдоевклидово пространство** — пара $(V,g)$, где $g$ — симметричная невырожденная билинейная форма. При $q=0$ получаем евклидово пространство. При $p,q>0$ значение $g(\mathbf{u},\mathbf{u})$ может быть положительным, отрицательным или нулевым.
+**Псевдоевклидово пространство** — пара $(V,g)$, где $g$ — симметричная невырожденная билинейная форма. При $q=0$ получаем евклидово пространство. При $p,q>0$ значение $g(\vec{u},\vec{u})$ может быть положительным, отрицательным или нулевым.
 
 Для дальнейших вычислений рассмотрим форму на плоскости с координатами $(X,x)$:
 ```math
 g\bigl((X,x),(Y,y)\bigr)=XY-xy.
 ```
-Для ненулевого вектора $\mathbf{u}=(X,x)$ условие нулевого значения имеет вид
+Для ненулевого вектора $\vec{u}=(X,x)$ условие нулевого значения имеет вид
 ```math
-g(\mathbf{u},\mathbf{u})=0\quad\Longleftrightarrow\quad x=\pm X.
+g(\vec{u},\vec{u})=0\quad\Longleftrightarrow\quad x=\pm X.
 ```
-Матрица $\operatorname{diag}(1,-1)$ невырожденна. Нулевое значение на отдельном ненулевом векторе этому не противоречит: невырожденность требует проверки пары с каждым $\mathbf{v}\in V$.
+Матрица $\operatorname{diag}(1,-1)$ невырожденна. Нулевое значение на отдельном ненулевом векторе этому не противоречит: невырожденность требует проверки пары с каждым $\vec{v}\in V$.
 
 ### 1.3. Ортогональное дополнение и изометрии
 
 **Ортогональное дополнение** подпространства $W$ состоит из векторов, ортогональных всем его векторам:
 ```math
-W^\perp=\{\mathbf{u}\in V:\forall\mathbf{w}\in W\quad
-g(\mathbf{u},\mathbf{w})=0\},\qquad
+W^\perp=\{\vec{u}\in V:\forall\vec{w}\in W\quad
+g(\vec{u},\vec{w})=0\},\qquad
 \dim W^\perp=n-\dim W.
 ```
 **Линейная изометрия** — линейное преобразование, сохраняющее форму. Для его матрицы $L$ получаем
 ```math
-g(L\mathbf{u},L\mathbf{v})=g(\mathbf{u},\mathbf{v})
-\quad(\forall\mathbf{u},\mathbf{v}\in V)
+g(L\vec{u},L\vec{v})=g(\vec{u},\vec{v})
+\quad(\forall\vec{u},\vec{v}\in V)
 \quad\Longleftrightarrow\quad L^{\mathsf T}GL=G.
 ```
 Сравнение определителей даёт
@@ -102,12 +102,12 @@ Q^{\mathsf T}Q=E_n.
 После выбора начала координат аффинное преобразование и квадрат интервала между точками записываются в виде
 ```math
 \begin{aligned}
-F(\mathbf{x})&=L\mathbf{x}+\mathbf{d},\\
+F(\vec{x})&=L\vec{x}+\vec{d},\\
 s^2(P,Q)&=g(\overrightarrow{PQ},\overrightarrow{PQ}),\\
-F(\mathbf{y})-F(\mathbf{x})&=L(\mathbf{y}-\mathbf{x}).
+F(\vec{y})-F(\vec{x})&=L(\vec{y}-\vec{x}).
 \end{aligned}
 ```
-Если $L$ — изометрия, квадрат интервала сохраняется. Постоянный вектор переноса $\mathbf{d}$ исчезает при вычитании.
+Если $L$ — изометрия, квадрат интервала сохраняется. Постоянный вектор переноса $\vec{d}$ исчезает при вычитании.
 
 ### 1.4. Изометрии псевдоевклидовой плоскости
 
@@ -191,21 +191,21 @@ b=\tanh\psi,\qquad
 
 ### 2.1. Поверхность и риманова метрика
 
-Гладкую поверхность $M\subset\mathbb R^3$ локально зададим параметризацией $\mathbf{r}(x^1,x^2)$ с линейно независимыми частными производными. Её образ — координатный участок поверхности. В точке $\mathbf{p}$ касательная плоскость имеет вид
+Гладкую поверхность $M\subset\mathbb R^3$ локально зададим параметризацией $\vec{r}(x^1,x^2)$ с линейно независимыми частными производными. Её образ — координатный участок поверхности. В точке $\vec{p}$ касательная плоскость имеет вид
 ```math
 \begin{aligned}
-\mathbf{p}&=\mathbf{r}(x^1,x^2),\qquad
+\vec{p}&=\vec{r}(x^1,x^2),\qquad
 \partial_i=\frac{\partial}{\partial x^i},\qquad
-\mathbf{e}_i=\partial_i\mathbf{r},\\
-T_{\mathbf{p}}M&=\{v^1\mathbf{e}_1+v^2\mathbf{e}_2:v^1,v^2\in\mathbb R\}.
+\vec{e}_i=\partial_i\vec{r},\\
+T_{\vec{p}}M&=\{v^1\vec{e}_1+v^2\vec{e}_2:v^1,v^2\in\mathbb R\}.
 \end{aligned}
 ```
-Векторы $\mathbf{e}_1,\mathbf{e}_2$ образуют координатный касательный базис. Точки поверхности отождествляем с радиус-векторами в $\mathbb R^3$.
+Векторы $\vec{e}_1,\vec{e}_2$ образуют координатный касательный базис. Точки поверхности отождествляем с радиус-векторами в $\mathbb R^3$.
 
 **Риманова метрика** $g$ — положительно определённая симметричная билинейная форма на каждой касательной плоскости, гладко зависящая от точки. На поверхности в $\mathbb R^3$ используем метрику, индуцированную евклидовым скалярным произведением:
 ```math
 \begin{aligned}
-g_{ij}&=g(\mathbf{e}_i,\mathbf{e}_j)=\langle\partial_i\mathbf{r},\partial_j\mathbf{r}\rangle,\\
+g_{ij}&=g(\vec{e}_i,\vec{e}_j)=\langle\partial_i\vec{r},\partial_j\vec{r}\rangle,\\
 G&=(g_{ij}),\qquad (g^{ij})=G^{-1},\qquad
 ds^2=g_{ij}\,dx^i dx^j.
 \end{aligned}
@@ -214,23 +214,23 @@ ds^2=g_{ij}\,dx^i dx^j.
 ```math
 g^{ik}g_{kj}=\delta^i{}_j.
 ```
-Для поверхности уровня $F=0$ при $\operatorname{grad}F(\mathbf{p})\ne\mathbf{0}$ касательная плоскость определяется условием
+Для поверхности уровня $F=0$ при $\operatorname{grad}F(\vec{p})\ne\vec{0}$ касательная плоскость определяется условием
 ```math
-T_{\mathbf{p}}M=\{\mathbf{v}:dF_{\mathbf{p}}(\mathbf{v})=0\},\qquad
-dF_{\mathbf{p}}(\mathbf{v})=\langle\operatorname{grad}F(\mathbf{p}),\mathbf{v}\rangle.
+T_{\vec{p}}M=\{\vec{v}:dF_{\vec{p}}(\vec{v})=0\},\qquad
+dF_{\vec{p}}(\vec{v})=\langle\operatorname{grad}F(\vec{p}),\vec{v}\rangle.
 ```
 
 ### 2.2. Связность, кривизна и геодезические
 
-Пусть $\mathbf{X},\mathbf{Y},\mathbf{Z}$ — гладкие касательные векторные поля. **Связность**, или **ковариантная производная**, $\nabla_{\mathbf{X}}\mathbf{Y}$ задаёт производную поля $\mathbf{Y}$ вдоль $\mathbf{X}$ с учётом изменения касательного базиса:
+Пусть $\vec{X},\vec{Y},\vec{Z}$ — гладкие касательные векторные поля. **Связность**, или **ковариантная производная**, $\nabla_{\vec{X}}\vec{Y}$ задаёт производную поля $\vec{Y}$ вдоль $\vec{X}$ с учётом изменения касательного базиса:
 ```math
-\nabla_{\mathbf{X}}\mathbf{Y}
-=X^i\left(\partial_iY^k+\Gamma^k{}_{ij}Y^j\right)\mathbf{e}_k,
-\qquad \mathbf{X}=X^i\mathbf{e}_i,\quad \mathbf{Y}=Y^j\mathbf{e}_j.
+\nabla_{\vec{X}}\vec{Y}
+=X^i\left(\partial_iY^k+\Gamma^k{}_{ij}Y^j\right)\vec{e}_k,
+\qquad \vec{X}=X^i\vec{e}_i,\quad \vec{Y}=Y^j\vec{e}_j.
 ```
 В этой формуле $\Gamma^k{}_{ij}$ — **символы Кристоффеля**, то есть коэффициенты производных базисных полей. Используем связность Леви-Чивиты: она сохраняет метрику и имеет симметричные нижние индексы:
 ```math
-\nabla_{\mathbf{e}_i}\mathbf{e}_j=\Gamma^k{}_{ij}\mathbf{e}_k,
+\nabla_{\vec{e}_i}\vec{e}_j=\Gamma^k{}_{ij}\vec{e}_k,
 \qquad \Gamma^k{}_{ij}=\Gamma^k{}_{ji},\qquad \nabla g=0.
 ```
 Эти условия однозначно определяют связность. Для расчёта используем формулу
@@ -241,39 +241,39 @@ dF_{\mathbf{p}}(\mathbf{v})=\langle\operatorname{grad}F(\mathbf{p}),\mathbf{v}\r
 Согласованность с метрикой и правило дифференцирования произведения дают
 ```math
 \begin{aligned}
-\mathbf{X}\bigl(g(\mathbf{Y},\mathbf{Z})\bigr)
-&=g(\nabla_{\mathbf{X}}\mathbf{Y},\mathbf{Z})
-+g(\mathbf{Y},\nabla_{\mathbf{X}}\mathbf{Z}),\\
-\nabla_{\mathbf{X}}(f\mathbf{Y})
-&=\mathbf{X}(f)\mathbf{Y}+f\nabla_{\mathbf{X}}\mathbf{Y},\qquad
-\mathbf{X}(f)=X^i\partial_i f.
+\vec{X}\bigl(g(\vec{Y},\vec{Z})\bigr)
+&=g(\nabla_{\vec{X}}\vec{Y},\vec{Z})
++g(\vec{Y},\nabla_{\vec{X}}\vec{Z}),\\
+\nabla_{\vec{X}}(f\vec{Y})
+&=\vec{X}(f)\vec{Y}+f\nabla_{\vec{X}}\vec{Y},\qquad
+\vec{X}(f)=X^i\partial_i f.
 \end{aligned}
 ```
 
 В работе **тензор** в фиксированной точке задаётся отображением, линейным по каждому из касательных векторов при фиксированных остальных аргументах. Например, метрика двум векторам сопоставляет число:
 ```math
-g_{\mathbf{p}}(\mathbf{u},\mathbf{v})=g_{ij}u^iv^j.
+g_{\vec{p}}(\vec{u},\vec{v})=g_{ij}u^iv^j.
 ```
 Гладкая зависимость таких отображений от точки задаёт тензорное поле. Компоненты описывают его в выбранном базисе; при смене базиса меняются компоненты, а само отображение сохраняется.
 
 **Тензор кривизны** $R$ сопоставляет трём касательным векторам четвёртый. Он определяется разностью последовательных ковариантных производных. Зафиксируем знак:
 ```math
-R(\mathbf{X},\mathbf{Y})\mathbf{Z}
-=\nabla_{\mathbf{X}}\nabla_{\mathbf{Y}}\mathbf{Z}
--\nabla_{\mathbf{Y}}\nabla_{\mathbf{X}}\mathbf{Z}
--\nabla_{[\mathbf{X},\mathbf{Y}]}\mathbf{Z}.
+R(\vec{X},\vec{Y})\vec{Z}
+=\nabla_{\vec{X}}\nabla_{\vec{Y}}\vec{Z}
+-\nabla_{\vec{Y}}\nabla_{\vec{X}}\vec{Z}
+-\nabla_{[\vec{X},\vec{Y}]}\vec{Z}.
 ```
 Здесь коммутатор полей задаётся равенством
 ```math
-[\mathbf{X},\mathbf{Y}](f)=\mathbf{X}(\mathbf{Y}(f))-\mathbf{Y}(\mathbf{X}(f)),
-\qquad [\mathbf{e}_i,\mathbf{e}_j]=\mathbf{0}.
+[\vec{X},\vec{Y}](f)=\vec{X}(\vec{Y}(f))-\vec{Y}(\vec{X}(f)),
+\qquad [\vec{e}_i,\vec{e}_j]=\vec{0}.
 ```
 Компоненты тензора определяют его действие на произвольные векторы:
 ```math
 \begin{aligned}
-R(\mathbf{e}_i,\mathbf{e}_j)\mathbf{e}_k&=R^l{}_{kij}\mathbf{e}_l,\\
-R_{\mathbf{p}}(\mathbf{u},\mathbf{v})\mathbf{w}
-&=R^l{}_{kij}u^iv^jw^k\mathbf{e}_l.
+R(\vec{e}_i,\vec{e}_j)\vec{e}_k&=R^l{}_{kij}\vec{e}_l,\\
+R_{\vec{p}}(\vec{u},\vec{v})\vec{w}
+&=R^l{}_{kij}u^iv^jw^k\vec{e}_l.
 \end{aligned}
 ```
 Таким образом, вычисления в базисе задают действие на любые касательные векторы. На рисунке 1 сопоставлены аргументы и результаты метрики и тензора кривизны.
@@ -294,30 +294,30 @@ R^l{}_{kij}=\partial_i\Gamma^l{}_{jk}-\partial_j\Gamma^l{}_{ik}
 \operatorname{Ric}_{kj}=\sum_i R^i{}_{kij},\qquad
 \operatorname{Scal}=\sum_{k,j}g^{kj}\operatorname{Ric}_{kj}.
 ```
-**Гауссова кривизна** $K$ поверхности определяется для линейно независимых $\mathbf{X},\mathbf{Y}\in T_{\mathbf{p}}M$ формулой
+**Гауссова кривизна** $K$ поверхности определяется для линейно независимых $\vec{X},\vec{Y}\in T_{\vec{p}}M$ формулой
 ```math
-K=\frac{g(R(\mathbf{X},\mathbf{Y})\mathbf{Y},\mathbf{X})}
-{g(\mathbf{X},\mathbf{X})g(\mathbf{Y},\mathbf{Y})-g(\mathbf{X},\mathbf{Y})^2}.
+K=\frac{g(R(\vec{X},\vec{Y})\vec{Y},\vec{X})}
+{g(\vec{X},\vec{X})g(\vec{Y},\vec{Y})-g(\vec{X},\vec{Y})^2}.
 ```
 Значение не зависит от выбора базиса двумерной касательной плоскости.
 
-**Геодезическая** — кривая $\boldsymbol{\gamma}(t)$, касательный вектор которой имеет нулевую ковариантную производную вдоль самой кривой:
+**Геодезическая** — кривая $\vec{\gamma}(t)$, касательный вектор которой имеет нулевую ковариантную производную вдоль самой кривой:
 ```math
-\nabla_{\dot{\boldsymbol{\gamma}}}\dot{\boldsymbol{\gamma}}=\mathbf{0}.
+\nabla_{\dot{\vec{\gamma}}}\dot{\vec{\gamma}}=\vec{0}.
 ```
 При заданных начальной точке и касательном векторе геодезическая локально существует и единственна.
 
 **Локальная изометрия** — гладкое обратимое отображение окрестностей с гладким обратным, сохраняющее метрику:
 ```math
-g_{s(\mathbf{p})}\bigl((ds)_{\mathbf{p}}\mathbf{v},(ds)_{\mathbf{p}}\mathbf{w}\bigr)
-=g_{\mathbf{p}}(\mathbf{v},\mathbf{w}).
+g_{s(\vec{p})}\bigl((ds)_{\vec{p}}\vec{v},(ds)_{\vec{p}}\vec{w}\bigr)
+=g_{\vec{p}}(\vec{v},\vec{w}).
 ```
-Дифференциал $(ds)_{\mathbf{p}}$ переводит касательные векторы в точке $\mathbf{p}$ в касательные векторы в точке $s(\mathbf{p})$.
+Дифференциал $(ds)_{\vec{p}}$ переводит касательные векторы в точке $\vec{p}$ в касательные векторы в точке $s(\vec{p})$.
 
-**Геодезическая симметрия** в точке $\mathbf{p}$ обращает направление каждой геодезической через эту точку:
+**Геодезическая симметрия** в точке $\vec{p}$ обращает направление каждой геодезической через эту точку:
 ```math
-s_{\mathbf{p}}(\boldsymbol{\gamma}(t))=\boldsymbol{\gamma}(-t),
-\qquad \boldsymbol{\gamma}(0)=\mathbf{p}.
+s_{\vec{p}}(\vec{\gamma}(t))=\vec{\gamma}(-t),
+\qquad \vec{\gamma}(0)=\vec{p}.
 ```
 Поверхность называется **локально симметричной**, если геодезическая симметрия в каждой точке является локальной изометрией.
 
@@ -328,37 +328,37 @@ s_{\mathbf{p}}(\boldsymbol{\gamma}(t))=\boldsymbol{\gamma}(-t),
 Сфера радиуса $a$ является поверхностью уровня функции $F$:
 ```math
 \begin{aligned}
-S_a^2&=\{\mathbf{x}\in\mathbb R^3:\langle\mathbf{x},\mathbf{x}\rangle=a^2\},\\
-F(\mathbf{x})&=\langle\mathbf{x},\mathbf{x}\rangle-a^2,
-\qquad \operatorname{grad}F(\mathbf{p})=2\mathbf{p}\ne\mathbf{0}.
+S_a^2&=\{\vec{x}\in\mathbb R^3:\langle\vec{x},\vec{x}\rangle=a^2\},\\
+F(\vec{x})&=\langle\vec{x},\vec{x}\rangle-a^2,
+\qquad \operatorname{grad}F(\vec{p})=2\vec{p}\ne\vec{0}.
 \end{aligned}
 ```
-Касательная плоскость определяется равенством $dF_{\mathbf{p}}(\mathbf{v})=0$:
+Касательная плоскость определяется равенством $dF_{\vec{p}}(\vec{v})=0$:
 ```math
 \begin{aligned}
-dF_{\mathbf{p}}(\mathbf{v})&=2\langle\mathbf{p},\mathbf{v}\rangle,\\
-T_{\mathbf{p}}S_a^2&=\{\mathbf{v}:\langle\mathbf{p},\mathbf{v}\rangle=0\}
-=\mathbf{p}^{\perp},
-\qquad g_{\mathbf{p}}(\mathbf{v},\mathbf{w})=\langle\mathbf{v},\mathbf{w}\rangle.
+dF_{\vec{p}}(\vec{v})&=2\langle\vec{p},\vec{v}\rangle,\\
+T_{\vec{p}}S_a^2&=\{\vec{v}:\langle\vec{p},\vec{v}\rangle=0\}
+=\vec{p}^{\perp},
+\qquad g_{\vec{p}}(\vec{v},\vec{w})=\langle\vec{v},\vec{w}\rangle.
 \end{aligned}
 ```
 Метрика положительно определена на всей сфере:
 ```math
-g_{\mathbf{p}}(\mathbf{v},\mathbf{v})=\|\mathbf{v}\|^2>0
-\qquad (\mathbf{0}\ne\mathbf{v}\in T_{\mathbf{p}}S_a^2).
+g_{\vec{p}}(\vec{v},\vec{v})=\|\vec{v}\|^2>0
+\qquad (\vec{0}\ne\vec{v}\in T_{\vec{p}}S_a^2).
 ```
 В сферических координатах $x^1=\theta$, $x^2=\varphi$ возьмём параметризацию
 ```math
 \begin{gathered}
-\mathbf{r}(\theta,\varphi)=a(\sin\theta\cos\varphi,\sin\theta\sin\varphi,\cos\theta),\\
+\vec{r}(\theta,\varphi)=a(\sin\theta\cos\varphi,\sin\theta\sin\varphi,\cos\theta),\\
 0<\theta<\pi,\qquad \alpha<\varphi<\alpha+2\pi.
 \end{gathered}
 ```
 Здесь $\theta$ — угол радиус-вектора с полярной осью, $\varphi$ — угол его проекции в перпендикулярной плоскости, а $\alpha$ фиксирует положение меридианного разреза. Координатный участок исключает полюса и меридиан $\varphi=\alpha$; в указанной области параметризация взаимно однозначна. Дифференцирование даёт
 ```math
 \begin{aligned}
-\mathbf{r}_\theta&=a(\cos\theta\cos\varphi,\cos\theta\sin\varphi,-\sin\theta),\\
-\mathbf{r}_\varphi&=a(-\sin\theta\sin\varphi,\sin\theta\cos\varphi,0).
+\vec{r}_\theta&=a(\cos\theta\cos\varphi,\cos\theta\sin\varphi,-\sin\theta),\\
+\vec{r}_\varphi&=a(-\sin\theta\sin\varphi,\sin\theta\cos\varphi,0).
 \end{aligned}
 ```
 Скалярные произведения координатных векторов равны
@@ -426,15 +426,15 @@ R^\varphi{}_{\varphi\theta\varphi}=-\partial_\varphi(\cot\theta)=0.
 При $i=j$ компоненты нулевые, перестановка $i,j$ меняет знак. Тем самым определены все компоненты, в частности
 ```math
 \begin{aligned}
-R(\mathbf{e}_\theta,\mathbf{e}_\varphi)\mathbf{e}_\theta
-&=-\mathbf{e}_\varphi,\\
-R(\mathbf{e}_\theta,\mathbf{e}_\varphi)\mathbf{e}_\varphi
-&=\sin^2\theta\,\mathbf{e}_\theta.
+R(\vec{e}_\theta,\vec{e}_\varphi)\vec{e}_\theta
+&=-\vec{e}_\varphi,\\
+R(\vec{e}_\theta,\vec{e}_\varphi)\vec{e}_\varphi
+&=\sin^2\theta\,\vec{e}_\theta.
 \end{aligned}
 ```
-Для $\mathbf{X}=\mathbf{e}_\theta$, $\mathbf{Y}=\mathbf{e}_\varphi$ определение гауссовой кривизны даёт
+Для $\vec{X}=\vec{e}_\theta$, $\vec{Y}=\vec{e}_\varphi$ определение гауссовой кривизны даёт
 ```math
-K=\frac{g(\sin^2\theta\,\mathbf{e}_\theta,\mathbf{e}_\theta)}
+K=\frac{g(\sin^2\theta\,\vec{e}_\theta,\vec{e}_\theta)}
 {g_{\theta\theta}g_{\varphi\varphi}-g_{\theta\varphi}^2}
 =\frac{a^2\sin^2\theta}{a^4\sin^2\theta}
 =\frac1{a^2}.
@@ -463,53 +463,53 @@ K=\frac{g(\sin^2\theta\,\mathbf{e}_\theta,\mathbf{e}_\theta)}
 
 ### 2.5. Кривизна на всей сфере и её ковариантная производная
 
-При $\theta=0,\pi$ вырождается формула выбранной параметризации, а не метрика на $\mathbf{p}^{\perp}$. Для каждой точки можно выбрать полярную ось и разрез, не содержащие эту точку. Ортогональная матрица $Q$ сохраняет евклидово скалярное произведение; повёрнутая параметризация имеет ту же метрику:
+При $\theta=0,\pi$ вырождается формула выбранной параметризации, а не метрика на $\vec{p}^{\perp}$. Для каждой точки можно выбрать полярную ось и разрез, не содержащие эту точку. Ортогональная матрица $Q$ сохраняет евклидово скалярное произведение; повёрнутая параметризация имеет ту же метрику:
 ```math
 Q^{\mathsf T}Q=E_3,\qquad
-\widetilde{\mathbf{r}}=Q\mathbf{r},\qquad
-\langle Q\mathbf{r}_{x^i},Q\mathbf{r}_{x^j}\rangle
-=\langle\mathbf{r}_{x^i},\mathbf{r}_{x^j}\rangle.
+\widetilde{\vec{r}}=Q\vec{r},\qquad
+\langle Q\vec{r}_{x^i},Q\vec{r}_{x^j}\rangle
+=\langle\vec{r}_{x^i},\vec{r}_{x^j}\rangle.
 ```
 Соответствующие координатные участки покрывают сферу и распространяют полученные тензорные результаты на всю $S_a^2$.
 
 Проверим по вычисленным компонентам равенство
 ```math
-R(\mathbf{X},\mathbf{Y})\mathbf{Z}
-=\frac1{a^2}\bigl(g(\mathbf{Y},\mathbf{Z})\mathbf{X}
--g(\mathbf{X},\mathbf{Z})\mathbf{Y}\bigr).
+R(\vec{X},\vec{Y})\vec{Z}
+=\frac1{a^2}\bigl(g(\vec{Y},\vec{Z})\vec{X}
+-g(\vec{X},\vec{Z})\vec{Y}\bigr).
 ```
-При $\mathbf{X}=\mathbf{e}_\theta$, $\mathbf{Y}=\mathbf{e}_\varphi$ правая часть на двух базисных векторах $\mathbf{Z}$ равна
+При $\vec{X}=\vec{e}_\theta$, $\vec{Y}=\vec{e}_\varphi$ правая часть на двух базисных векторах $\vec{Z}$ равна
 ```math
 \begin{aligned}
-\mathbf{Z}=\mathbf{e}_\theta:&\qquad
-\frac1{a^2}(g_{\varphi\theta}\mathbf{e}_\theta-g_{\theta\theta}\mathbf{e}_\varphi)
-=-\mathbf{e}_\varphi,\\
-\mathbf{Z}=\mathbf{e}_\varphi:&\qquad
-\frac1{a^2}(g_{\varphi\varphi}\mathbf{e}_\theta-g_{\theta\varphi}\mathbf{e}_\varphi)
-=\sin^2\theta\,\mathbf{e}_\theta.
+\vec{Z}=\vec{e}_\theta:&\qquad
+\frac1{a^2}(g_{\varphi\theta}\vec{e}_\theta-g_{\theta\theta}\vec{e}_\varphi)
+=-\vec{e}_\varphi,\\
+\vec{Z}=\vec{e}_\varphi:&\qquad
+\frac1{a^2}(g_{\varphi\varphi}\vec{e}_\theta-g_{\theta\varphi}\vec{e}_\varphi)
+=\sin^2\theta\,\vec{e}_\theta.
 \end{aligned}
 ```
-Это совпадает с ранее вычисленным действием $R(\mathbf{e}_\theta,\mathbf{e}_\varphi)$. Обе части кососимметричны по $\mathbf{X},\mathbf{Y}$, при равных базисных аргументах равны нулю; по многолинейности равенство верно для любых $\mathbf{X},\mathbf{Y},\mathbf{Z}$. Проверка применима в каждой из повёрнутых параметризаций. В координатах
+Это совпадает с ранее вычисленным действием $R(\vec{e}_\theta,\vec{e}_\varphi)$. Обе части кососимметричны по $\vec{X},\vec{Y}$, при равных базисных аргументах равны нулю; по многолинейности равенство верно для любых $\vec{X},\vec{Y},\vec{Z}$. Проверка применима в каждой из повёрнутых параметризаций. В координатах
 ```math
 R^l{}_{kij}=\frac1{a^2}\left(\delta^l{}_i g_{jk}-\delta^l{}_j g_{ik}\right).
 ```
-Проверим, что ковариантная производная тензора равна нулю. Пусть $\mathbf{W}$ — произвольное гладкое касательное поле. Радиус $a$ постоянен и $\nabla g=0$; полная производная имеет вид
+Проверим, что ковариантная производная тензора равна нулю. Пусть $\vec{W}$ — произвольное гладкое касательное поле. Радиус $a$ постоянен и $\nabla g=0$; полная производная имеет вид
 ```math
 \begin{aligned}
-(\nabla_{\mathbf{W}}R)(\mathbf{X},\mathbf{Y})\mathbf{Z}
-&=\nabla_{\mathbf{W}}(R(\mathbf{X},\mathbf{Y})\mathbf{Z})
--R(\nabla_{\mathbf{W}}\mathbf{X},\mathbf{Y})\mathbf{Z}\\
-&\quad-R(\mathbf{X},\nabla_{\mathbf{W}}\mathbf{Y})\mathbf{Z}
--R(\mathbf{X},\mathbf{Y})(\nabla_{\mathbf{W}}\mathbf{Z}).
+(\nabla_{\vec{W}}R)(\vec{X},\vec{Y})\vec{Z}
+&=\nabla_{\vec{W}}(R(\vec{X},\vec{Y})\vec{Z})
+-R(\nabla_{\vec{W}}\vec{X},\vec{Y})\vec{Z}\\
+&\quad-R(\vec{X},\nabla_{\vec{W}}\vec{Y})\vec{Z}
+-R(\vec{X},\vec{Y})(\nabla_{\vec{W}}\vec{Z}).
 \end{aligned}
 ```
-Здесь учитывается изменение результата $R(\mathbf{X},\mathbf{Y})\mathbf{Z}$ и трёх аргументов. После подстановки выражения для $R$ правило Лейбница сокращает слагаемые с производными полей; остаются только производные метрики:
+Здесь учитывается изменение результата $R(\vec{X},\vec{Y})\vec{Z}$ и трёх аргументов. После подстановки выражения для $R$ правило Лейбница сокращает слагаемые с производными полей; остаются только производные метрики:
 ```math
 \begin{aligned}
-(\nabla_{\mathbf{W}}R)(\mathbf{X},\mathbf{Y})\mathbf{Z}
-&=\frac1{a^2}\bigl((\nabla_{\mathbf{W}}g)(\mathbf{Y},\mathbf{Z})\mathbf{X}
--(\nabla_{\mathbf{W}}g)(\mathbf{X},\mathbf{Z})\mathbf{Y}\bigr)\\
-&=\mathbf{0}.
+(\nabla_{\vec{W}}R)(\vec{X},\vec{Y})\vec{Z}
+&=\frac1{a^2}\bigl((\nabla_{\vec{W}}g)(\vec{Y},\vec{Z})\vec{X}
+-(\nabla_{\vec{W}}g)(\vec{X},\vec{Z})\vec{Y}\bigr)\\
+&=\vec{0}.
 \end{aligned}
 ```
 Следовательно,
@@ -520,27 +520,27 @@ R^l{}_{kij}=\frac1{a^2}\left(\delta^l{}_i g_{jk}-\delta^l{}_j g_{ik}\right).
 
 ### 2.6. Доказательство локальной симметричности
 
-Ортогональное преобразование $\mathbb R^3$, сохраняющее сферу, сохраняет и её индуцированную метрику. Для фиксированной точки $\mathbf{p}\in S_a^2$ рассмотрим
+Ортогональное преобразование $\mathbb R^3$, сохраняющее сферу, сохраняет и её индуцированную метрику. Для фиксированной точки $\vec{p}\in S_a^2$ рассмотрим
 ```math
-s_{\mathbf{p}}(\mathbf{q})
-=2\frac{\langle\mathbf{p},\mathbf{q}\rangle}{a^2}\mathbf{p}-\mathbf{q}.
+s_{\vec{p}}(\vec{q})
+=2\frac{\langle\vec{p},\vec{q}\rangle}{a^2}\vec{p}-\vec{q}.
 ```
-Разложим радиус-вектор на составляющие вдоль $\mathbf{p}$ и перпендикулярно ему:
+Разложим радиус-вектор на составляющие вдоль $\vec{p}$ и перпендикулярно ему:
 ```math
-\mathbf{q}=\lambda\mathbf{p}+\mathbf{v},\qquad
-\langle\mathbf{p},\mathbf{v}\rangle=0,
-\qquad s_{\mathbf{p}}(\mathbf{q})=\lambda\mathbf{p}-\mathbf{v}.
+\vec{q}=\lambda\vec{p}+\vec{v},\qquad
+\langle\vec{p},\vec{v}\rangle=0,
+\qquad s_{\vec{p}}(\vec{q})=\lambda\vec{p}-\vec{v}.
 ```
-Здесь $\lambda\mathbf{p}$ — ортогональная проекция на прямую $\mathbb R\mathbf{p}$, а $\mathbf{v}$ — перпендикулярная составляющая.
-Это ортогональный поворот на $\pi$ вокруг прямой $\mathbb R\mathbf{p}$, сохраняющий сферу и метрику. Он фиксирует $\mathbf{p}$, а его дифференциал обращает каждый касательный вектор:
+Здесь $\lambda\vec{p}$ — ортогональная проекция на прямую $\mathbb R\vec{p}$, а $\vec{v}$ — перпендикулярная составляющая.
+Это ортогональный поворот на $\pi$ вокруг прямой $\mathbb R\vec{p}$, сохраняющий сферу и метрику. Он фиксирует $\vec{p}$, а его дифференциал обращает каждый касательный вектор:
 ```math
-s_{\mathbf{p}}(\mathbf{p})=\mathbf{p},\qquad
-(ds_{\mathbf{p}})_{\mathbf{p}}\mathbf{v}=-\mathbf{v}
-\quad(\mathbf{v}\in\mathbf{p}^{\perp}).
+s_{\vec{p}}(\vec{p})=\vec{p},\qquad
+(ds_{\vec{p}})_{\vec{p}}\vec{v}=-\vec{v}
+\quad(\vec{v}\in\vec{p}^{\perp}).
 ```
-Изометрия переводит геодезическую $\boldsymbol{\gamma}(t)$ с начальными данными $(\mathbf{p},\mathbf{v})$ в геодезическую с данными $(\mathbf{p},-\mathbf{v})$. Кривая $\boldsymbol{\gamma}(-t)$ имеет те же начальные данные. По единственности геодезической
+Изометрия переводит геодезическую $\vec{\gamma}(t)$ с начальными данными $(\vec{p},\vec{v})$ в геодезическую с данными $(\vec{p},-\vec{v})$. Кривая $\vec{\gamma}(-t)$ имеет те же начальные данные. По единственности геодезической
 ```math
-s_{\mathbf{p}}(\boldsymbol{\gamma}(t))=\boldsymbol{\gamma}(-t)
+s_{\vec{p}}(\vec{\gamma}(t))=\vec{\gamma}(-t)
 \quad\text{при достаточно малых }t.
 ```
 Следовательно, построенное отображение совпадает с геодезической симметрией и является изометрией.
@@ -549,7 +549,7 @@ s_{\mathbf{p}}(\boldsymbol{\gamma}(t))=\boldsymbol{\gamma}(-t)
 
 Рисунок 2 — Геодезическая симметрия сферы
 
-Большая окружность получается пересечением сферы с плоскостью через её центр. В таком сечении (рисунок 2) дуги $\mathbf{p}\mathbf{q}$ и $\mathbf{p}s_{\mathbf{p}}(\mathbf{q})$ имеют равные длины и противоположные начальные направления в $\mathbf{p}$.
+Большая окружность получается пересечением сферы с плоскостью через её центр. В таком сечении (рисунок 2) дуги $\vec{p}\vec{q}$ и $\vec{p}s_{\vec{p}}(\vec{q})$ имеют равные длины и противоположные начальные направления в $\vec{p}$.
 
 Для единичной сферы ($a=1$) получаем
 ```math
@@ -572,17 +572,17 @@ x^0&=ct,\qquad x^1=x,\\
 x^2&=y,\qquad x^3=z.
 \end{aligned}
 ```
-Верхние индексы здесь нумеруют координаты. Пространство событий с формой сигнатуры $(1,3)$ называется пространством Минковского. Для векторов $\mathbf{A},\mathbf{B}$ с компонентами $A^\mu,B^\mu$, где $\mu=0,1,2,3$, форма и её матрица имеют вид
+Верхние индексы здесь нумеруют координаты. Пространство событий с формой сигнатуры $(1,3)$ называется пространством Минковского. Для векторов $\vec{A},\vec{B}$ с компонентами $A^\mu,B^\mu$, где $\mu=0,1,2,3$, форма и её матрица имеют вид
 ```math
 \begin{aligned}
 \eta&=\operatorname{diag}(1,-1,-1,-1),\\
-\eta(\mathbf{A},\mathbf{B})&=A^0B^0-A^1B^1-A^2B^2-A^3B^3.
+\eta(\vec{A},\vec{B})&=A^0B^0-A^1B^1-A^2B^2-A^3B^3.
 \end{aligned}
 ```
-Положим $\mathbf{r}=(x,y,z)$. Квадрат интервала между событиями — значение формы на разности их координат:
+Положим $\vec{r}=(x,y,z)$. Квадрат интервала между событиями — значение формы на разности их координат:
 ```math
 \begin{aligned}
-\Delta s^2&=c^2(\Delta t)^2-|\Delta\mathbf{r}|^2,\\
+\Delta s^2&=c^2(\Delta t)^2-|\Delta\vec{r}|^2,\\
 ds^2&=c^2dt^2-dx^2-dy^2-dz^2.
 \end{aligned}
 ```
@@ -596,7 +596,7 @@ ds^2&=c^2dt^2-dx^2-dy^2-dz^2.
 ```
 Это названия трёх случаев, рассмотренных в главе 1. Ненулевые векторы с нулевым квадратом формы задают световой конус:
 ```math
-|\Delta\mathbf{r}|=c|\Delta t|.
+|\Delta\vec{r}|=c|\Delta t|.
 ```
 
 ### 3.2. Преобразования Лоренца и их геометрический смысл
@@ -670,23 +670,23 @@ v&=\frac{v_1+v_2}{1+v_1v_2/c^2}.
 
 Мировой линией называется кривая, описывающая последовательность событий движения тела. Собственное время $\tau$ — время, показываемое часами, движущимися вместе с телом. Пусть вдоль линии $dt>0$. Вектор скорости и его ограничение имеют вид
 ```math
-\mathbf{u}=\frac{d\mathbf{r}}{dt},\qquad |\mathbf{u}|<c.
+\vec{u}=\frac{d\vec{r}}{dt},\qquad |\vec{u}|<c.
 ```
 Из инвариантного соотношения
 ```math
-ds^2=c^2dt^2\left(1-\frac{|\mathbf{u}|^2}{c^2}\right)=c^2d\tau^2
+ds^2=c^2dt^2\left(1-\frac{|\vec{u}|^2}{c^2}\right)=c^2d\tau^2
 ```
 получаем
 ```math
 \begin{aligned}
-d\tau&=dt\sqrt{1-\frac{|\mathbf{u}|^2}{c^2}},\\
-\tau_2-\tau_1&=\int_{t_1}^{t_2}\sqrt{1-\frac{|\mathbf{u}(t)|^2}{c^2}}\,dt.
+d\tau&=dt\sqrt{1-\frac{|\vec{u}|^2}{c^2}},\\
+\tau_2-\tau_1&=\int_{t_1}^{t_2}\sqrt{1-\frac{|\vec{u}(t)|^2}{c^2}}\,dt.
 \end{aligned}
 ```
 Промежуток $\Delta\tau$ относится к двум событиям на мировой линии одних часов; $\Delta t$ — к координатам тех же событий в выбранной инерциальной системе. Для фиксированной линии собственное время инвариантно; для разных линий между теми же событиями оно может различаться. При постоянном модуле скорости
 ```math
 \Delta t=\gamma_u\Delta\tau,\qquad
-\gamma_u=\frac1{\sqrt{1-|\mathbf{u}|^2/c^2}}.
+\gamma_u=\frac1{\sqrt{1-|\vec{u}|^2/c^2}}.
 ```
 Это соотношение называют замедлением времени движущихся часов.
 На светоподобной линии $ds^2=0$ собственное время не служит параметром.
@@ -728,7 +728,7 @@ L=\frac{L_0}{\gamma}=0{,}8\ \text{м}.
 
 ### 3.4. Скорости и четырёхвекторы
 
-Для скорости частицы $\mathbf{u}=(u_x,u_y,u_z)$ дифференцирование преобразования Лоренца даёт
+Для скорости частицы $\vec{u}=(u_x,u_y,u_z)$ дифференцирование преобразования Лоренца даёт
 ```math
 dt'=\gamma\left(1-\frac{vu_x}{c^2}\right)dt.
 ```
@@ -738,17 +738,17 @@ u_x'=\frac{u_x-v}{1-vu_x/c^2},\qquad
 u_y'=\frac{u_y}{\gamma(1-vu_x/c^2)},\qquad
 u_z'=\frac{u_z}{\gamma(1-vu_x/c^2)}.
 ```
-При $|\mathbf{u}|<c$, $|v|<c$ знаменатель положителен; из инвариантности интервала следует $|\mathbf{u}'|<c$. Для $\mathbf{u}=(v,0,0)$ частица покоится в $K'$, а для луча $u_x=c$ имеем $u_x'=c$. При $u_x=0{,}8c$, $v=0{,}6c$, $u_y=u_z=0$ получаем
+При $|\vec{u}|<c$, $|v|<c$ знаменатель положителен; из инвариантности интервала следует $|\vec{u}'|<c$. Для $\vec{u}=(v,0,0)$ частица покоится в $K'$, а для луча $u_x=c$ имеем $u_x'=c$. При $u_x=0{,}8c$, $v=0{,}6c$, $u_y=u_z=0$ получаем
 ```math
 u_x'=\frac{0{,}8c-0{,}6c}{1-0{,}8\cdot0{,}6}
 =\frac{5c}{13}\approx0{,}385c.
 ```
 
-Греческие индексы принимают значения $0,1,2,3$, пространственные $i$ — $1,2,3$. Элементы матриц перехода и метрики обозначим через $\Lambda^\mu{}_{\nu}$ и $\eta_{\mu\nu}$. Четырёхвектор $\mathbf{A}$ определяется законом преобразования его компонент:
+Греческие индексы принимают значения $0,1,2,3$, пространственные $i$ — $1,2,3$. Элементы матриц перехода и метрики обозначим через $\Lambda^\mu{}_{\nu}$ и $\eta_{\mu\nu}$. Четырёхвектор $\vec{A}$ определяется законом преобразования его компонент:
 ```math
 A'^\mu=\Lambda^\mu{}_{\nu}A^\nu.
 ```
-Опускание индекса означает получение нижних компонентов с помощью метрики. Для двух четырёхвекторов $\mathbf{A},\mathbf{B}$ условие изометрии даёт
+Опускание индекса означает получение нижних компонентов с помощью метрики. Для двух четырёхвекторов $\vec{A},\vec{B}$ условие изометрии даёт
 ```math
 \begin{aligned}
 A_\mu&=\eta_{\mu\nu}A^\nu,\\
@@ -756,12 +756,12 @@ A_\mu&=\eta_{\mu\nu}A^\nu,\\
 A_0&=A^0,\qquad A_i=-A^i.
 \end{aligned}
 ```
-Четырёхскорость $\mathbf{U}$ — производная координат события по собственному времени. Её компоненты, запись в выбранном базисе и инвариантный квадрат имеют вид
+Четырёхскорость $\vec{U}$ — производная координат события по собственному времени. Её компоненты, запись в выбранном базисе и инвариантный квадрат имеют вид
 ```math
 \begin{aligned}
 U^\mu&=\frac{dx^\mu}{d\tau},\\
-\mathbf{U}&=\gamma_u(c,u_x,u_y,u_z),\\
-\eta(\mathbf{U},\mathbf{U})&=c^2.
+\vec{U}&=\gamma_u(c,u_x,u_y,u_z),\\
+\eta(\vec{U},\vec{U})&=c^2.
 \end{aligned}
 ```
 
@@ -936,13 +936,13 @@ t'=\gamma\left(t-\frac{vx}{c^2}\right),\qquad y'=y,\quad z'=z,\\
 
 ```math
 \begin{aligned}
-&dt>0,\quad |\mathbf{u}|<c,\qquad
-c^2d\tau^2=ds^2=c^2dt^2\left(1-\frac{|\mathbf{u}|^2}{c^2}\right),\\
-&d\tau=dt\sqrt{1-\frac{|\mathbf{u}|^2}{c^2}},\qquad
-\tau_2-\tau_1=\int_{t_1}^{t_2}\sqrt{1-\frac{|\mathbf{u}(t)|^2}{c^2}}\,dt,\\
-&\mathbf{u}=\mathrm{const}\ \Longrightarrow\
+&dt>0,\quad |\vec{u}|<c,\qquad
+c^2d\tau^2=ds^2=c^2dt^2\left(1-\frac{|\vec{u}|^2}{c^2}\right),\\
+&d\tau=dt\sqrt{1-\frac{|\vec{u}|^2}{c^2}},\qquad
+\tau_2-\tau_1=\int_{t_1}^{t_2}\sqrt{1-\frac{|\vec{u}(t)|^2}{c^2}}\,dt,\\
+&\vec{u}=\mathrm{const}\ \Longrightarrow\
 \Delta t=\gamma_u\Delta\tau,\qquad
-\gamma_u=\left(1-|\mathbf{u}|^2/c^2\right)^{-1/2},\\
+\gamma_u=\left(1-|\vec{u}|^2/c^2\right)^{-1/2},\\
 &\left(\frac{c\Delta t}{2}\right)^2
 =h^2+\left(\frac{v\Delta t}{2}\right)^2,\qquad
 \Delta\tau=\frac{2h}{c},\\
@@ -956,20 +956,20 @@ c^2d\tau^2=ds^2=c^2dt^2\left(1-\frac{|\mathbf{u}|^2}{c^2}\right),\\
 \end{aligned}
 ```
 
-Скорости: $\mathbf{u}=d\mathbf{r}/dt$, $|\mathbf{u}|\le c$, $|v|<c$.
+Скорости: $\vec{u}=d\vec{r}/dt$, $|\vec{u}|\le c$, $|v|<c$.
 
 ```math
 \begin{aligned}
 &dx'=\gamma(dx-v\,dt),\qquad
 dt'=\gamma\left(dt-\frac{v}{c^2}dx\right),\qquad dy'=dy,\quad dz'=dz,\\
 &dt'=\gamma\left(1-\frac{vu_x}{c^2}\right)dt>0
-\qquad (dt>0,\ |\mathbf{u}|\le c),\\
+\qquad (dt>0,\ |\vec{u}|\le c),\\
 &u_x'=\frac{dx'}{dt'}=\frac{u_x-v}{1-vu_x/c^2},\\
 &u_y'=\frac{u_y}{\gamma(1-vu_x/c^2)},\qquad
 u_z'=\frac{u_z}{\gamma(1-vu_x/c^2)},\\
-&|\mathbf{u}|<c:\quad c^2dt'^2-|d\mathbf{r}'|^2
-=c^2dt^2-|d\mathbf{r}|^2>0\ \Longrightarrow\ |\mathbf{u}'|<c,\\
-&\mathbf{u}=(v,0,0)\ \Longrightarrow\ \mathbf{u}'=\mathbf{0},\\
+&|\vec{u}|<c:\quad c^2dt'^2-|d\vec{r}'|^2
+=c^2dt^2-|d\vec{r}|^2>0\ \Longrightarrow\ |\vec{u}'|<c,\\
+&\vec{u}=(v,0,0)\ \Longrightarrow\ \vec{u}'=\vec{0},\\
 &\text{луч вдоль }x:\quad (u_x,u_y,u_z)=(c,0,0)
 \ \Longrightarrow\ u_x'=\frac{c-v}{1-v/c}=c.
 \end{aligned}
@@ -981,13 +981,13 @@ u_z'=\frac{u_z}{\gamma(1-vu_x/c^2)},\\
 
 ```math
 \begin{aligned}
-&S_a^2=\{\mathbf{p}:\langle \mathbf{p},\mathbf{p}\rangle=a^2\},\qquad
-T_{\mathbf{p}}S_a^2=\mathbf{p}^\perp,\qquad g_\mathbf{p}(\mathbf{v},\mathbf{w})=\langle \mathbf{v},\mathbf{w}\rangle,\\
-&\mathbf{r}(\theta,\varphi)
+&S_a^2=\{\vec{p}:\langle \vec{p},\vec{p}\rangle=a^2\},\qquad
+T_{\vec{p}}S_a^2=\vec{p}^\perp,\qquad g_{\vec{p}}(\vec{v},\vec{w})=\langle \vec{v},\vec{w}\rangle,\\
+&\vec{r}(\theta,\varphi)
 =a(\sin\theta\cos\varphi,\sin\theta\sin\varphi,\cos\theta),\\
-&\mathbf{r}_\theta=a(\cos\theta\cos\varphi,\cos\theta\sin\varphi,-\sin\theta),\\
-&\mathbf{r}_\varphi=a(-\sin\theta\sin\varphi,\sin\theta\cos\varphi,0),\\
-&g_{\theta\theta}=\langle \mathbf{r}_\theta,\mathbf{r}_\theta\rangle
+&\vec{r}_\theta=a(\cos\theta\cos\varphi,\cos\theta\sin\varphi,-\sin\theta),\\
+&\vec{r}_\varphi=a(-\sin\theta\sin\varphi,\sin\theta\cos\varphi,0),\\
+&g_{\theta\theta}=\langle \vec{r}_\theta,\vec{r}_\theta\rangle
 =a^2(\cos^2\theta+\sin^2\theta)=a^2,\\
 &g_{\theta\varphi}
 =a^2\cos\theta\sin\theta(-\cos\varphi\sin\varphi+\sin\varphi\cos\varphi)=0,\\
@@ -1000,7 +1000,7 @@ G^{-1}=\operatorname{diag}\left(a^{-2},(a^2\sin^2\theta)^{-1}\right),\\
 \end{aligned}
 ```
 
-Связность и кривизна; $R(\mathbf{e}_i,\mathbf{e}_j)\mathbf{e}_k=R^l{}_{kij}\mathbf{e}_l$.
+Связность и кривизна; $R(\vec{e}_i,\vec{e}_j)\vec{e}_k=R^l{}_{kij}\vec{e}_l$.
 
 ```math
 \begin{aligned}
@@ -1034,8 +1034,8 @@ R^\varphi{}_{\varphi\theta\varphi}=-\partial_\varphi(\cot\theta)=0,\\
 
 ```math
 \begin{aligned}
-&K=\frac{g(R(\mathbf{e}_\theta,\mathbf{e}_\varphi)\mathbf{e}_\varphi,
-\mathbf{e}_\theta)}{g_{\theta\theta}g_{\varphi\varphi}-g_{\theta\varphi}^2}
+&K=\frac{g(R(\vec{e}_\theta,\vec{e}_\varphi)\vec{e}_\varphi,
+\vec{e}_\theta)}{g_{\theta\theta}g_{\varphi\varphi}-g_{\theta\varphi}^2}
 =\frac{a^2\sin^2\theta}{a^4\sin^2\theta}=\frac1{a^2},\\
 &\operatorname{Ric}_{kj}=\sum_iR^i{}_{kij},\\
 &\operatorname{Ric}_{\theta\theta}=R^\varphi{}_{\theta\varphi\theta}=1,
@@ -1056,25 +1056,25 @@ R^\varphi{}_{\varphi\theta\varphi}=-\partial_\varphi(\cot\theta)=0,\\
 
 ```math
 \begin{aligned}
-&\frac1{a^2}(g_{\varphi\theta}\mathbf{e}_\theta
--g_{\theta\theta}\mathbf{e}_\varphi)
-=-\mathbf{e}_\varphi
-=R(\mathbf{e}_\theta,\mathbf{e}_\varphi)\mathbf{e}_\theta,\\
-&\frac1{a^2}(g_{\varphi\varphi}\mathbf{e}_\theta
--g_{\theta\varphi}\mathbf{e}_\varphi)
-=\sin^2\theta\,\mathbf{e}_\theta
-=R(\mathbf{e}_\theta,\mathbf{e}_\varphi)\mathbf{e}_\varphi,\\
-&R(\mathbf{X},\mathbf{Y})\mathbf{Z}=\frac1{a^2}\bigl(g(\mathbf{Y},\mathbf{Z})\mathbf{X}-g(\mathbf{X},\mathbf{Z})\mathbf{Y}\bigr),\\
+&\frac1{a^2}(g_{\varphi\theta}\vec{e}_\theta
+-g_{\theta\theta}\vec{e}_\varphi)
+=-\vec{e}_\varphi
+=R(\vec{e}_\theta,\vec{e}_\varphi)\vec{e}_\theta,\\
+&\frac1{a^2}(g_{\varphi\varphi}\vec{e}_\theta
+-g_{\theta\varphi}\vec{e}_\varphi)
+=\sin^2\theta\,\vec{e}_\theta
+=R(\vec{e}_\theta,\vec{e}_\varphi)\vec{e}_\varphi,\\
+&R(\vec{X},\vec{Y})\vec{Z}=\frac1{a^2}\bigl(g(\vec{Y},\vec{Z})\vec{X}-g(\vec{X},\vec{Z})\vec{Y}\bigr),\\
 &R^l{}_{kij}=\frac1{a^2}
 \left(\delta^l{}_i g_{jk}-\delta^l{}_j g_{ik}\right),\\
 &U=(0,\pi)\times(\alpha,\alpha+2\pi),\qquad
-S_a^2=\bigcup_Q Q \mathbf{r}(U),\\
-&\widetilde{\mathbf{r}}=Q \mathbf{r},\qquad
-\langle\widetilde{\mathbf{r}}_i,\widetilde{\mathbf{r}}_j\rangle
-=\langle Q \mathbf{r}_i,Q \mathbf{r}_j\rangle=\langle \mathbf{r}_i,\mathbf{r}_j\rangle,\\
+S_a^2=\bigcup_Q Q \vec{r}(U),\\
+&\widetilde{\vec{r}}=Q \vec{r},\qquad
+\langle\widetilde{\vec{r}}_i,\widetilde{\vec{r}}_j\rangle
+=\langle Q \vec{r}_i,Q \vec{r}_j\rangle=\langle \vec{r}_i,\vec{r}_j\rangle,\\
 &K=a^{-2},\quad \operatorname{Ric}=a^{-2}g,\quad
 \operatorname{Scal}=2a^{-2}\quad\text{на }S_a^2,\\
-&R(\mathbf{X},\mathbf{Y})\mathbf{Z}=a^{-2}(g(\mathbf{Y},\mathbf{Z})\mathbf{X}-g(\mathbf{X},\mathbf{Z})\mathbf{Y})\quad\text{на }S_a^2.
+&R(\vec{X},\vec{Y})\vec{Z}=a^{-2}(g(\vec{Y},\vec{Z})\vec{X}-g(\vec{X},\vec{Z})\vec{Y})\quad\text{на }S_a^2.
 \end{aligned}
 ```
 
@@ -1082,18 +1082,18 @@ S_a^2=\bigcup_Q Q \mathbf{r}(U),\\
 
 ```math
 \begin{aligned}
-(\nabla_\mathbf{W} R)(\mathbf{X},\mathbf{Y})\mathbf{Z}
-&=\nabla_\mathbf{W} (R(\mathbf{X},\mathbf{Y})\mathbf{Z})-R(\nabla_\mathbf{W} \mathbf{X},\mathbf{Y})\mathbf{Z}\\
-&\quad-R(\mathbf{X},\nabla_\mathbf{W} \mathbf{Y})\mathbf{Z}-R(\mathbf{X},\mathbf{Y})(\nabla_\mathbf{W} \mathbf{Z}),\\
-a^2(\nabla_\mathbf{W} R)(\mathbf{X},\mathbf{Y})\mathbf{Z}
-&=\mathbf{W}(g(\mathbf{Y},\mathbf{Z}))\mathbf{X}+g(\mathbf{Y},\mathbf{Z})\nabla_\mathbf{W} \mathbf{X}\\
-&\quad-\mathbf{W}(g(\mathbf{X},\mathbf{Z}))\mathbf{Y}-g(\mathbf{X},\mathbf{Z})\nabla_\mathbf{W} \mathbf{Y}\\
-&\quad-g(\mathbf{Y},\mathbf{Z})\nabla_\mathbf{W} \mathbf{X}+g(\nabla_\mathbf{W} \mathbf{X},\mathbf{Z})\mathbf{Y}\\
-&\quad-g(\nabla_\mathbf{W} \mathbf{Y},\mathbf{Z})\mathbf{X}+g(\mathbf{X},\mathbf{Z})\nabla_\mathbf{W} \mathbf{Y}\\
-&\quad-g(\mathbf{Y},\nabla_\mathbf{W} \mathbf{Z})\mathbf{X}+g(\mathbf{X},\nabla_\mathbf{W} \mathbf{Z})\mathbf{Y}\\
-&=\bigl(\mathbf{W}(g(\mathbf{Y},\mathbf{Z}))-g(\nabla_\mathbf{W} \mathbf{Y},\mathbf{Z})-g(\mathbf{Y},\nabla_\mathbf{W} \mathbf{Z})\bigr)\mathbf{X}\\
-&\quad-\bigl(\mathbf{W}(g(\mathbf{X},\mathbf{Z}))-g(\nabla_\mathbf{W} \mathbf{X},\mathbf{Z})-g(\mathbf{X},\nabla_\mathbf{W} \mathbf{Z})\bigr)\mathbf{Y}\\
-&=(\nabla_\mathbf{W} g)(\mathbf{Y},\mathbf{Z})\mathbf{X}-(\nabla_\mathbf{W} g)(\mathbf{X},\mathbf{Z})\mathbf{Y}=\mathbf{0},\\
+(\nabla_{\vec{W}} R)(\vec{X},\vec{Y})\vec{Z}
+&=\nabla_{\vec{W}} (R(\vec{X},\vec{Y})\vec{Z})-R(\nabla_{\vec{W}} \vec{X},\vec{Y})\vec{Z}\\
+&\quad-R(\vec{X},\nabla_{\vec{W}} \vec{Y})\vec{Z}-R(\vec{X},\vec{Y})(\nabla_{\vec{W}} \vec{Z}),\\
+a^2(\nabla_{\vec{W}} R)(\vec{X},\vec{Y})\vec{Z}
+&=\vec{W}(g(\vec{Y},\vec{Z}))\vec{X}+g(\vec{Y},\vec{Z})\nabla_{\vec{W}} \vec{X}\\
+&\quad-\vec{W}(g(\vec{X},\vec{Z}))\vec{Y}-g(\vec{X},\vec{Z})\nabla_{\vec{W}} \vec{Y}\\
+&\quad-g(\vec{Y},\vec{Z})\nabla_{\vec{W}} \vec{X}+g(\nabla_{\vec{W}} \vec{X},\vec{Z})\vec{Y}\\
+&\quad-g(\nabla_{\vec{W}} \vec{Y},\vec{Z})\vec{X}+g(\vec{X},\vec{Z})\nabla_{\vec{W}} \vec{Y}\\
+&\quad-g(\vec{Y},\nabla_{\vec{W}} \vec{Z})\vec{X}+g(\vec{X},\nabla_{\vec{W}} \vec{Z})\vec{Y}\\
+&=\bigl(\vec{W}(g(\vec{Y},\vec{Z}))-g(\nabla_{\vec{W}} \vec{Y},\vec{Z})-g(\vec{Y},\nabla_{\vec{W}} \vec{Z})\bigr)\vec{X}\\
+&\quad-\bigl(\vec{W}(g(\vec{X},\vec{Z}))-g(\nabla_{\vec{W}} \vec{X},\vec{Z})-g(\vec{X},\nabla_{\vec{W}} \vec{Z})\bigr)\vec{Y}\\
+&=(\nabla_{\vec{W}} g)(\vec{Y},\vec{Z})\vec{X}-(\nabla_{\vec{W}} g)(\vec{X},\vec{Z})\vec{Y}=\vec{0},\\
 \nabla R&=0\ \Longrightarrow\ S_a^2\text{ локально симметрична},\\
  a=1:&\qquad K=1,\qquad \operatorname{Scal}=2,\qquad \nabla R=0.
 \end{aligned}
